@@ -8,4 +8,4 @@
 
 </footer>
 
-@include('sections.home.modal')
+

@@ -1314,13 +1314,13 @@
       "customFontSize": false,
       "fontFamilies": [
         {
-          "fontFamily": "Montserrat,Helvetica,Arial,sans-serif",
-          "name": "Montserrat",
+          "fontFamily": "Bai Jamjuree,Helvetica,Arial,sans-serif",
+          "name": "Bai Jamjuree",
           "slug": "primary"
         },
         {
-          "fontFamily": "Playfair Display,Helvetica,Arial,sans-serif",
-          "name": "Playfair Display",
+          "fontFamily": "Bahnschrift,Helvetica,Arial,sans-serif",
+          "name": "Bahnschrift",
           "slug": "secondary"
         }
       ],

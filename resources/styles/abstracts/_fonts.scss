@@ -1,70 +1,46 @@
+/* bai-jamjuree-regular - latin_latin-ext */
 @font-face {
-  font-family: "Montserrat";
-  src: url("../../fonts/Montserrat-Regular.woff2") format("woff2"),
-       url("../../fonts/Montserrat-Regular.woff") format("woff"),
-       url("../../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  src: url('../../fonts/bai-jamjuree-v11-latin_latin-ext-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../../fonts/bai-jamjuree-v11-latin_latin-ext-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
-
+/* bai-jamjuree-600 - latin_latin-ext */
 @font-face {
-  font-family: "Montserrat";
-  src: url("../../fonts/Montserrat-Medium.woff2") format("woff2"),
-       url("../../fonts/Montserrat-Medium.woff") format("woff"),
-       url("../../fonts/Montserrat-Medium.ttf") format("truetype");
-  font-weight: 500;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Bai Jamjuree';
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("../../fonts/Montserrat-SemiBold.woff2") format("woff2"),
-       url("../../fonts/Montserrat-SemiBold.woff") format("woff"),
-       url("../../fonts/Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+  src: url('../../fonts/bai-jamjuree-v11-latin_latin-ext-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../../fonts/bai-jamjuree-v11-latin_latin-ext-600.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
-
+/* bai-jamjuree-700 - latin_latin-ext */
 @font-face {
-  font-family: "Montserrat";
-  src: url("../../fonts/Montserrat-Bold.woff2") format("woff2"),
-       url("../../fonts/Montserrat-Bold.woff") format("woff"),
-       url("../../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
   font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+  src: url('../../fonts/bai-jamjuree-v11-latin_latin-ext-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../../fonts/bai-jamjuree-v11-latin_latin-ext-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
 @font-face {
-  font-family: "Playfair Display";
-  src: url("../../fonts/PlayfairDisplay-Regular.woff2") format("woff2"),
-       url("../../fonts/PlayfairDisplay-Regular.woff") format("woff"),
-       url("../../fonts/PlayfairDisplay-Regular.ttf") format("truetype");
-  font-weight: 400;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Bai Jamjuree';
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Playfair Display";
-  src: url("../../fonts/PlayfairDisplay-Medium.woff2") format("woff2"),
-       url("../../fonts/PlayfairDisplay-Medium.woff") format("woff"),
-       url("../../fonts/PlayfairDisplay-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+  font-weight: 700;
+  src: url('../../fonts/bai-jamjuree-v11-latin_latin-ext-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../../fonts/bai-jamjuree-v11-latin_latin-ext-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
 
 @font-face {
-  font-family: "Playfair Display";
-  src: url("../../fonts/PlayfairDisplay-SemiBold.woff2") format("woff2"),
-       url("../../fonts/PlayfairDisplay-SemiBold.woff") format("woff"),
-       url("../../fonts/PlayfairDisplay-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
   font-display: swap;
+  font-family: 'Bahnschrift Light Condensed'; 
+  font-style: normal;
+  font-weight: 300;
+  src: url('../../fonts/Bahnschrift.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../../fonts/Bahnschrift.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }

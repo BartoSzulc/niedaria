@@ -23,8 +23,9 @@ module.exports = {
       '5xl': '1920px',
     },
     fontFamily: {
-      primary: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'],
-      secondary: ['Playfair Display', 'Helvetica', 'Arial', 'sans-serif'],
+      primary: ['Bai Jamjuree', 'Helvetica', 'Arial', 'sans-serif'],
+      secondary: ['Bahnschrift', 'Helvetica', 'Arial', 'sans-serif'],
+
     },
     letterSpacing: {
       tightest: '1px',

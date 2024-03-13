@@ -1432,12 +1432,12 @@
         },
         {
           "name": "h2",
-          "size": "clamp(2.125rem, 2vw + 1rem, 3rem);",
+          "size": "clamp(4rem, 4vw + 1.5rem, 4.5rem);",
           "slug": "h2"
         },
         {
           "name": "h1",
-          "size": "clamp(3.5rem, 3vw + 2.75rem, 6rem);",
+          "size": "clamp(4.5rem, 5.5vw + 2rem, 6.625rem);",
           "slug": "h1"
         }
       ]

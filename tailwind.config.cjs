@@ -107,11 +107,11 @@ module.exports = {
         lineHeight: 1.29,
         fontWeight: 600,
       }],
-      'h2': ['clamp(2.125rem, 2vw + 1rem, 3rem);', {
+      'h2': ['clamp(4rem, 4vw + 1.5rem, 4.5rem);', {
         lineHeight: 1.20,
         fontWeight: 600,
       }],
-      'h1': ['clamp(3.5rem, 3vw + 2.75rem, 6rem);', {
+      'h1': ['clamp(4.5rem, 5.5vw + 2rem, 6.625rem);', {
         lineHeight: 1,
         fontWeight: 700,
       }],

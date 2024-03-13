@@ -6,7 +6,8 @@ import Carousels from "./components/Carousels";
 import GLightbox from 'glightbox';
 import AOS from 'aos';
 import $ from 'jquery';
-import SlimSelect from 'slim-select';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 /**
  * app.main
@@ -14,155 +15,154 @@ import SlimSelect from 'slim-select';
 
 const main = async (err) => {
 
-  window.addEventListener('load', adjustPaddingTop);
-  window.addEventListener('resize', adjustPaddingTop);
 
-  function adjustPaddingTop() {
-    // Default padding
-    let defaultPadding = 120;
-    // Selecting the parent .img elements
-    let imgContainers = document.querySelectorAll('.offerSwiper .swiper-slide .img');
-    let paddingElements = document.querySelectorAll('.paddingScript');
+  gsap.registerPlugin(ScrollTrigger);
 
-    if (imgContainers.length !== paddingElements.length) {
-        console.log('The number of images and padding elements does not match.');
-        return;
+  gsap.fromTo(".header_images-layout",
+    { scale: 3.2 },
+    { // end state
+      scale: 1,
+      scrollTrigger: {
+        trigger: ".section_header",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        markers: true,
+      }
     }
-
-    imgContainers.forEach((imgContainer, index) => {
-        let imgElement = imgContainer.querySelector('img'); // Select the img tag within the .img container
-        let paddingElement = paddingElements[index];
-        if (!paddingElement) {
-            console.log('Corresponding paddingScript element not found for index', index);
-            return;
-        }
-
-        if (imgElement && imgElement.complete) {
-            applyPadding(imgElement, paddingElement, imgContainer); // Pass the imgContainer to apply styles to it
-        } else if (imgElement) {
-            imgElement.onload = function() {
-                applyPadding(imgElement, paddingElement, imgContainer); // Pass the imgContainer to apply styles to it
-            };
-        }
-    });
-}
-
-function applyPadding(imgElement, paddingElement, imgContainer) {
-    let imgHeight = imgElement.offsetHeight;
-    let defaultPadding = 120;
-    paddingElement.style.paddingTop = (imgHeight > 0 ? imgHeight / 2 : defaultPadding) + 'px';
-    // Apply margin-bottom to the .img container instead of the imgElement
-    imgContainer.style.marginBottom = (imgHeight > 0 ? -imgHeight / 2 : -defaultPadding / 2) + 'px';
-}
-
- 
-
-
-
-  const stickyHeader = document.querySelector('.main-header--sticky');
-  let lastScrollY = window.scrollY;
-  let isScrollingDown = false;
-
-  function handleStickyHeaderVisibility() {
-    const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY) {
-  
-      isScrollingDown = true;
-    } else if (currentScrollY < lastScrollY) {
-      isScrollingDown = false;
+  );
+  gsap.fromTo(".image-overlay-layer", 
+  { opacity: 1 }, // start state
+  { // end state
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".section_header",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      markers: true,
     }
-    if (isScrollingDown) {
-      stickyHeader.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
-      stickyHeader.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
-    } else {
-      stickyHeader.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
-      stickyHeader.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
-    }
-    lastScrollY = currentScrollY;
   }
-
-
-  window.addEventListener('scroll', handleStickyHeaderVisibility);
-  
-
-  const menuItems = document.querySelectorAll('.yourMenuItemId'); // Select all menu items
-  const modal = document.querySelector('#contactModal');
-  const modalContent = modal?.querySelector('.modal-content');
-  const modalInside = modal?.querySelector('.modal-inside');
-  
-  const showModal = () => {
-    modal.classList.remove('hidden');
-    modalContent.classList.replace('animate-scaleDown', 'animate-scaleUp');
-  };
-
-  const hideModal = () => {
-    modalContent.classList.replace('animate-scaleUp', 'animate-scaleDown');
-    setTimeout(() => modal.classList.add('hidden'), 200);
-  };
-
-  menuItems?.forEach(menuItem => {
-    menuItem.addEventListener('click', (e) => {
-      e.preventDefault();
-      showModal();
-    });
-  });
-
-  if (modal) {
-    [modal, modalInside].forEach(element => element.addEventListener('click', hideModal));
-    modalContent?.addEventListener('click', (e) => e.stopPropagation());
+);
+  gsap.fromTo(".hero_text",
+  { fontSize: "clamp(4.5rem, 5.5vw + 2rem, 6.625rem)" },
+  { // end state
+    fontSize: "clamp(4rem, 4vw + 1.5rem, 4.5rem)",
+    scrollTrigger: {
+      trigger: ".section_header",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      markers: true,
+    }
   }
+);
+  
 
-  if (modal) {
-    const closeButton = modal.querySelector('#closeModal');
-    closeButton?.addEventListener('click', hideModal);
-  } 
+  // const stickyHeader = document.querySelector('.main-header--sticky');
+  // let lastScrollY = window.scrollY;
+  // let isScrollingDown = false;
 
-  AOS.init({
-    offset: 0,
-    duration: 500,
-    easing: 'ease-in-out',
-  });
+  // function handleStickyHeaderVisibility() {
+  //   const currentScrollY = window.scrollY;
+  //   if (currentScrollY > lastScrollY) {
+  
+  //     isScrollingDown = true;
+  //   } else if (currentScrollY < lastScrollY) {
+  //     isScrollingDown = false;
+  //   }
+  //   if (isScrollingDown) {
+  //     stickyHeader.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
+  //     stickyHeader.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+  //   } else {
+  //     stickyHeader.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+  //     stickyHeader.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+  //   }
+  //   lastScrollY = currentScrollY;
+  // }
+
+
+  // window.addEventListener('scroll', handleStickyHeaderVisibility);
+  
+
+  // const menuItems = document.querySelectorAll('.yourMenuItemId'); // Select all menu items
+  // const modal = document.querySelector('#contactModal');
+  // const modalContent = modal?.querySelector('.modal-content');
+  // const modalInside = modal?.querySelector('.modal-inside');
+  
+  // const showModal = () => {
+  //   modal.classList.remove('hidden');
+  //   modalContent.classList.replace('animate-scaleDown', 'animate-scaleUp');
+  // };
+
+  // const hideModal = () => {
+  //   modalContent.classList.replace('animate-scaleUp', 'animate-scaleDown');
+  //   setTimeout(() => modal.classList.add('hidden'), 200);
+  // };
+
+  // menuItems?.forEach(menuItem => {
+  //   menuItem.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     showModal();
+  //   });
+  // });
+
+  // if (modal) {
+  //   [modal, modalInside].forEach(element => element.addEventListener('click', hideModal));
+  //   modalContent?.addEventListener('click', (e) => e.stopPropagation());
+  // }
+
+  // if (modal) {
+  //   const closeButton = modal.querySelector('#closeModal');
+  //   closeButton?.addEventListener('click', hideModal);
+  // } 
+
+  // AOS.init({
+  //   offset: 0,
+  //   duration: 500,
+  //   easing: 'ease-in-out',
+  // });
   if (err) {
     // handle hmr errors
     console.error(err);
   }
 
 
-  $('a[href*="#"]')
-  // Remove links that don't actually link to anything
-  .not('[href="#"]')
-  .not('[href="#0"]')
-  .click(function (event) {
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-      &&
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top - 50
-        }, 1000, function () {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
-          };
-        });
-      }
-    }
-  });
+  // $('a[href*="#"]')
+  // // Remove links that don't actually link to anything
+  // .not('[href="#"]')
+  // .not('[href="#0"]')
+  // .click(function (event) {
+  //   // On-page links
+  //   if (
+  //     location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+  //     &&
+  //     location.hostname == this.hostname
+  //   ) {
+  //     // Figure out element to scroll to
+  //     var target = $(this.hash);
+  //     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+  //     // Does a scroll target exist?
+  //     if (target.length) {
+  //       // Only prevent default if animation is actually gonna happen
+  //       event.preventDefault();
+  //       $('html, body').animate({
+  //         scrollTop: target.offset().top - 50
+  //       }, 1000, function () {
+  //         // Callback after animation
+  //         // Must change focus!
+  //         var $target = $(target);
+  //         $target.focus();
+  //         if ($target.is(":focus")) { // Checking if the target was focused
+  //           return false;
+  //         } else {
+  //           $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+  //           $target.focus(); // Set focus again
+  //         };
+  //       });
+  //     }
+  //   }
+  // });
 
 
   // let lazyLoad = new LazyLoad({
@@ -194,6 +194,7 @@ function applyPadding(imgElement, paddingElement, imgContainer) {
 </div>
 </div>`;
 const lightbox = GLightbox({ 
+
 lightboxHTML: customLightboxHTML,
 });
 

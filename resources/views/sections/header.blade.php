@@ -4,7 +4,7 @@
 
 @endphp
 
-<header class="banner lg:py-9 z-[99] relative">
+{{-- <header class="banner lg:py-9 z-[99] relative">
   <div class="container">
     <div class="flex items-center justify-between relative">
       <a class="max-sm:self-start brand flex w-20 sm:w-[120px] lg:w-auto" href="{{ home_url() }}">
@@ -26,6 +26,6 @@
     </div>
   </div>
   @include('partials.header.mobile-menu')
-</div>
+</div> --}}
 
 

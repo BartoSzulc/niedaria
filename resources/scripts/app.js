@@ -45,9 +45,13 @@ const main = async (err) => {
   }
 );
   gsap.fromTo(".hero_text",
-  { fontSize: "clamp(4.5rem, 5.5vw + 2rem, 6.625rem)" },
+  { 
+    fontSize: "clamp(4rem, 4vw + 1.5rem, 4.5rem)", // h2 to h3 fontSize
+    lineHeight: "clamp(4.813rem, 5vw + 1.25rem, 5.375rem);", // h2 to h3 lineHeight
+  },
   { // end state
-    fontSize: "clamp(4rem, 4vw + 1.5rem, 4.5rem)",
+    fontSize: "clamp(4.5rem, 5.5vw + 2rem, 6.625rem)", // h1 to h2 fontSize
+    lineHeight: "clamp(5.375rem, 5.5vw + 2rem, 7.938rem)", // h1 to h2 lineHeight
     scrollTrigger: {
       trigger: ".section_header",
       start: "top top",
@@ -57,8 +61,40 @@ const main = async (err) => {
     }
   }
 );
-  
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const headings = gsap.utils.toArray('.layout_heading');
+  const triggerSection = document.querySelector('.home__click');
+
+  // Set initial positions for the 3rd, 4th, and 5th headings
+  gsap.set(headings[2], {yPercent: -100});
+  gsap.set(headings[3], {yPercent: -200});
+  gsap.set(headings[4], {yPercent: -300});
+
+  // Function to create scroll-triggered animations
+  function createScrollAnimation(heading, startPercent, endPercent) {
+    gsap.to(heading, {
+      scrollTrigger: {
+        trigger: triggerSection,
+        start: "top bottom", // Animation starts when the top of triggerSection hits the bottom of the viewport
+        end: "bottom top", // Animation ends when the bottom of triggerSection exits the top of the viewport
+        scrub: true, // Smooth scrubbing
+        markers: true, // For debugging; remove in production
+      },
+      yPercent: endPercent,
+      ease: "none",
+    });
+  }
+
+  // Create animations for each heading
+  createScrollAnimation(headings[0], 0, -100);
+  createScrollAnimation(headings[1], 0, -200);
+  createScrollAnimation(headings[2], -100, -300);
+  createScrollAnimation(headings[3], -200, -400);
+  createScrollAnimation(headings[4], -300, -500); // Adjust the final value based on your needs
+});
   // const stickyHeader = document.querySelector('.main-header--sticky');
   // let lastScrollY = window.scrollY;
   // let isScrollingDown = false;

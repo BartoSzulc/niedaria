@@ -1289,6 +1289,46 @@
           "color": "#8f94a5",
           "name": "Color7",
           "slug": "color7"
+        },
+        {
+          "color": "#f9b208",
+          "name": "Primary100",
+          "slug": "primary100"
+        },
+        {
+          "color": "#f9b208",
+          "name": "Primary80",
+          "slug": "primary80"
+        },
+        {
+          "color": "#fbcb57",
+          "name": "Primary60",
+          "slug": "primary60"
+        },
+        {
+          "color": "#fcd77f",
+          "name": "Primary40",
+          "slug": "primary40"
+        },
+        {
+          "color": "#fde3a6",
+          "name": "Primary20",
+          "slug": "primary20"
+        },
+        {
+          "color": "#b8b8b8",
+          "name": "Black10",
+          "slug": "black10"
+        },
+        {
+          "color": "#222222",
+          "name": "Black80",
+          "slug": "black80"
+        },
+        {
+          "color": "#525252",
+          "name": "Black60",
+          "slug": "black60"
         }
       ]
     },
@@ -1319,8 +1359,8 @@
           "slug": "primary"
         },
         {
-          "fontFamily": "Bahnschrift,Helvetica,Arial,sans-serif",
-          "name": "Bahnschrift",
+          "fontFamily": "Saira Extra Condensed,Helvetica,Arial,sans-serif",
+          "name": "Saira Extra Condensed",
           "slug": "secondary"
         }
       ],
@@ -1411,23 +1451,33 @@
           "slug": "button"
         },
         {
-          "name": "h6",
-          "size": "clamp(1.188rem, 3vw - 1rem, 1.25rem);",
-          "slug": "h6"
+          "name": "B20",
+          "size": "20px",
+          "slug": "B20"
+        },
+        {
+          "name": "B24",
+          "size": "24px",
+          "slug": "B24"
+        },
+        {
+          "name": "BQuote",
+          "size": "28px",
+          "slug": "BQuote"
         },
         {
           "name": "h5",
-          "size": "clamp(1.25rem, 3.5vw - 1rem, 1.375rem);",
+          "size": "clamp(1.5rem, 5vw - 1rem, 2rem)",
           "slug": "h5"
         },
         {
           "name": "h4",
-          "size": "clamp(1.375rem, 3.5vw - 1rem, 1.625rem);",
+          "size": "clamp(2rem, 3vw + 1rem, 2.75rem);",
           "slug": "h4"
         },
         {
           "name": "h3",
-          "size": "clamp(1.5rem, 1vw + 1rem, 2.125rem);",
+          "size": "clamp(2.75rem, 4vw + 1rem, 4rem);",
           "slug": "h3"
         },
         {

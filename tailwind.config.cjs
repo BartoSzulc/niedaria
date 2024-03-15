@@ -24,7 +24,7 @@ module.exports = {
     },
     fontFamily: {
       primary: ['Bai Jamjuree', 'Helvetica', 'Arial', 'sans-serif'],
-      secondary: ['Bahnschrift', 'Helvetica', 'Arial', 'sans-serif'],
+      secondary: ['Saira Extra Condensed', 'Helvetica', 'Arial', 'sans-serif'],
 
     },
     letterSpacing: {
@@ -52,6 +52,15 @@ module.exports = {
       color5: "#FFF",
       color6: "#0F1425",
       color7: '#8F94A5',
+      primary100: '#F9B208',
+      primary80: '#F9B208',
+      primary60: '#FBCB57',
+      primary40: '#FCD77F',
+      primary20: '#FDE3A6',
+      black10: '#B8B8B8',
+      black80: '#222222',
+      black60: '#525252',
+
     },
     spacing: {
       'half': '50px',
@@ -91,28 +100,34 @@ module.exports = {
       ],
       // https://modern-fluid-typography.vercel.app/
       // where u can get fluid typography
-      'h6': ['clamp(1.188rem, 3vw - 1rem, 1.25rem);', {
-        lineHeight: 1.6,
+      'B20': ['20px', {
+        lineHeight: '30px',
+      }],
+      'B24': ['24px', {
+        lineHeight: '36px',
+      }],
+      'BQuote': ['28px', {
+        lineHeight: '42px',
+        fontStyle: 'italic',
+      }],
+      'h5': ['clamp(1.5rem, 5vw - 1rem, 2rem)', {
+        lineHeight: 'clamp(2rem, 5vw, 2.813rem);',
         fontWeight: 700,
       }],
-      'h5': ['clamp(1.25rem, 3.5vw - 1rem, 1.375rem);', {
-        lineHeight: 1.36,
-        fontWeight: 600,
+      'h4': ['clamp(2rem, 3vw + 1rem, 2.75rem);', {
+        lineHeight: 'clamp(2.813rem, 4vw + 1rem, 3.563rem);',
+        fontWeight: 700,
       }],
-      'h4': ['clamp(1.375rem, 3.5vw - 1rem, 1.625rem);', {
-        lineHeight: 1.30,
-        fontWeight: 600,
-      }],
-      'h3': ['clamp(1.5rem, 1vw + 1rem, 2.125rem);', {
-        lineHeight: 1.29,
-        fontWeight: 600,
+      'h3': ['clamp(2.75rem, 4vw + 1rem, 4rem);', {
+        lineHeight: 'clamp(3.563rem, 5vw + 1rem, 4.813rem);',
+        fontWeight: 700,
       }],
       'h2': ['clamp(4rem, 4vw + 1.5rem, 4.5rem);', {
-        lineHeight: 1.20,
-        fontWeight: 600,
+        lineHeight: 'clamp(4.813rem, 5vw + 1.25rem, 5.375rem);',
+        fontWeight: 700,
       }],
       'h1': ['clamp(4.5rem, 5.5vw + 2rem, 6.625rem);', {
-        lineHeight: 1,
+        lineHeight: 'clamp(5.375rem, 5.5vw + 2rem, 7.938rem);',
         fontWeight: 700,
       }],
     },
@@ -144,7 +159,7 @@ module.exports = {
           paddingLeft: "1.25rem",
           paddingRight: "1.25rem",
           width: "100%",
-          maxWidth: "1824px",
+          maxWidth: "1168px",
           margin: "0 auto",
         },
         ".wrapper": {

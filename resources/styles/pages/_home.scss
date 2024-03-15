@@ -75,3 +75,31 @@
    left: 0%;
    right: 0%
 }
+
+// 
+.layout_heading-list {
+   height: 77px;
+   overflow: hidden
+}
+
+.layout_component {
+   height: 300vh;
+   flex-direction: column;
+   position: relative
+}
+
+.layout_content {
+   height: 100vh;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0;
+   overflow: hidden
+}
+
+.layout_heading {
+   white-space: nowrap;
+   font-size: 5.5rem
+}

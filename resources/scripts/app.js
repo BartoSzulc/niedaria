@@ -64,37 +64,36 @@ const main = async (err) => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const headings = gsap.utils.toArray('.layout_heading');
-  const triggerSection = document.querySelector('.home__click');
 
-  // Set initial positions for the 3rd, 4th, and 5th headings
-  gsap.set(headings[2], {yPercent: -100});
-  gsap.set(headings[3], {yPercent: -200});
-  gsap.set(headings[4], {yPercent: -300});
 
-  // Function to create scroll-triggered animations
-  function createScrollAnimation(heading, startPercent, endPercent) {
-    gsap.to(heading, {
-      scrollTrigger: {
-        trigger: triggerSection,
-        start: "top bottom", // Animation starts when the top of triggerSection hits the bottom of the viewport
-        end: "bottom top", // Animation ends when the bottom of triggerSection exits the top of the viewport
-        scrub: true, // Smooth scrubbing
-        markers: true, // For debugging; remove in production
-      },
-      yPercent: endPercent,
-      ease: "none",
-    });
-  }
+// Get all the headings
+// Get all the headings
+const headings = document.querySelectorAll('.layout_heading:not(.spacer)');
 
-  // Create animations for each heading
-  createScrollAnimation(headings[0], 0, -100);
-  createScrollAnimation(headings[1], 0, -200);
-  createScrollAnimation(headings[2], -100, -300);
-  createScrollAnimation(headings[3], -200, -400);
-  createScrollAnimation(headings[4], -300, -500); // Adjust the final value based on your needs
-});
+// Loop over each heading
+for(let i = 0; i < headings.length; i++) {
+  // Create a ScrollTrigger for each heading
+  ScrollTrigger.create({
+    trigger: headings[i],
+    start: "bottom center", // Start the trigger when the heading is at the center of the viewport
+    end: () => `+=${headings[i].offsetHeight}px`, // End the trigger when the heading is fully out of the viewport
+    onEnter: () => animateHeading(headings[i], 1, `-${i * 100}%`), // Fade in the heading when it enters the viewport and translate it up
+    onLeave: () => { // Fade out the heading when it leaves the viewport from the top, unless it's the last heading
+      if (i < headings.length - 1) {
+        animateHeading(headings[i], 0, `-${(i + 1) * 100}%`); // Translate it further up when it leaves the viewport
+      }
+    },
+    onEnterBack: () => animateHeading(headings[i], 1, `-${i * 100}%`), // Fade in the heading when it enters the viewport from the bottom and translate it down
+    onLeaveBack: () => animateHeading(headings[i], 0, `-${i * 100}%`), // Fade out the heading when it leaves the viewport from the top and translate it down
+    markers: true,
+    scrub: true
+  });
+}
+
+// Function to animate the opacity and translation of a heading
+function animateHeading(heading, opacity, y) {
+  gsap.to(heading, { opacity: opacity, y: y });
+}
   // const stickyHeader = document.querySelector('.main-header--sticky');
   // let lastScrollY = window.scrollY;
   // let isScrollingDown = false;

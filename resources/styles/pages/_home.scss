@@ -78,12 +78,12 @@
 
 // 
 .layout_heading-list {
-  
+   height: 86px;
    overflow: hidden
 }
 
 .layout_component {
-   height: 300vh;
+   height: 700vh;
    flex-direction: column;
    position: relative
 }
@@ -101,6 +101,10 @@
 
 .layout_heading {
    white-space: nowrap;
-   font-size: 5.5rem;
-   ;
 }
+//
+.work_grid {
+
+}
+
+

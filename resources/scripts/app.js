@@ -1,23 +1,37 @@
 // import LazyLoad from "vanilla-lazyload";
 import { domReady } from '@roots/sage/client';
 import Menu from "./components/Menu";
+import CardsScroll from "./components/CardsScroll";
 import Carousels from "./components/Carousels";
 // import Search from "./components/Search";
 import GLightbox from 'glightbox';
 import AOS from 'aos';
 import $ from 'jquery';
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Swiper from 'swiper';
+import Lenis from '@studio-freight/lenis'
 /**
  * app.main
  */
-
+gsap.registerPlugin(ScrollTrigger);
 const main = async (err) => {
+  
 
+  const lenis = new Lenis()
 
-  gsap.registerPlugin(ScrollTrigger);
+  lenis.on('scroll', (e) => {
+    console.log(e)
+  })
+  
+  lenis.on('scroll', ScrollTrigger.update)
+  
+  gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000)
+  })
+  
+  gsap.ticker.lagSmoothing(0)
+
 
   gsap.fromTo(".header_images-layout",
     { scale: 3.2 },
@@ -28,7 +42,7 @@ const main = async (err) => {
         start: "top top",
         end: "bottom bottom",
         scrub: true,
-        markers: true,
+        markers : false,
       }
     }
   );
@@ -41,7 +55,7 @@ const main = async (err) => {
       start: "top top",
       end: "bottom bottom",
       scrub: true,
-      markers: true,
+      markers: false,
     }
   }
 );
@@ -58,77 +72,141 @@ const main = async (err) => {
       start: "top top",
       end: "bottom bottom",
       scrub: true,
-      markers: true,
+      markers: false,
     }
   }
 );
 
-const cards = document.querySelectorAll('.work_card');
-
-// Loop through each card
-cards.forEach((card, index) => {
-  // Calculate the translateY value for each card based on its index
-  const translateY = -(index * 100) + '%';
-
-  // Create a ScrollTrigger instance for each card
-  ScrollTrigger.create({
-    trigger: card,
-    start: 'top bottom', // Start the animation when the top of the card hits the bottom of the viewport
-    end: 'bottom top', // End the animation when the bottom of the card exits the top of the viewport
-    markers: false, // Set to true to see the start and end points during development
-    // Animate the card's translateY property based on the scroll position
-    onUpdate: self => {
-      // Calculate the progress of the scroll between the start and end points and map it to the desired translateY value
-      let progress = self.progress;
-      gsap.to(card, {y: translateY * progress, ease: 'none'});
-    }
-  });
-});
-
 const headings = gsap.utils.toArray('.layout_heading');
 const layoutComponent = document.querySelector('.layout_component');
 
-const triggerEach = layoutComponent.offsetHeight / headings.length;
+const triggerStart = "top top";
 
-headings.forEach((heading, i) => {
-  if (i === 0) { // for the first heading
-    heading.style.transform = 'translate(0px, 0%)';
-    heading.style.opacity = '1';
-  } else {
-    heading.style.transform = `translate(0px, ${-100 * i}%)`;
-    heading.style.opacity = '0';
+const masterTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: layoutComponent,
+    start: triggerStart,
+    scrub: true,
+    markers: false,
+    end: () => layoutComponent.offsetHeight + " bottom",
   }
 });
+
+// Set initial positions for the headings
 headings.forEach((heading, i) => {
-  ScrollTrigger.create({
-    trigger: layoutComponent,
-    start: () => triggerEach * i + " top",
-    end: () => triggerEach * (i + 1) + " top",
-    scrub: true,
-    markers: true,
-    onEnter: () => {
-      if (i !== 0) {
-        heading.classList.add('active');
-        gsap.to(heading, { opacity: 1, y: `${-100 * i}%` });
-      }
-    },
-    onLeave: () => {
-      heading.classList.remove('active');
-      gsap.to(heading, { opacity: 0, y: `${-100 * (i + 1)}%` });
-    },
-    onEnterBack: () => {
-      heading.classList.add('active');
-      gsap.to(heading, { opacity: 1, y: `${-100 * i}%` });
-    },
-    onLeaveBack: () => {
-      if (i !== 0) {
-        heading.classList.remove('active');
-        gsap.to(heading, { opacity: 0, y: `${-100 * i}%` });
-      }
-     
-    },
-  });
+  let yPercentValue;
+  
+  if (i === 0) {
+    yPercentValue = 0;
+  } else if (i === 1) {
+    yPercentValue = 0;
+  } else {
+    yPercentValue = -100 * (i - 1);
+  }
+
+  gsap.set(heading, { 
+    yPercent: yPercentValue, 
+    opacity: i === 0 ? 1 : 0
+  }); 
 });
+
+// Adjust the animation logic
+headings.forEach((heading, i) => {
+  const delay = i === 0 ? 0 : '-=0.9';
+  
+  if (i < headings.length - 1) {
+    // For all headings except the last one
+    masterTimeline.to(heading, {
+      yPercent: i === 0 ? -100 : '-=100',
+      opacity: i === 0 ? 0 : 1,
+      duration: 1,
+      ease: "none"
+    }, delay);
+
+    if (i > 0) {
+      masterTimeline.to(heading, {
+        yPercent: '-=100',
+        opacity: 0,
+        duration: 1,
+        ease: "none"
+      }, '+=0.2');
+    }
+  } else {
+    // For the last heading, ensure it stops at -400% and opacity: 1
+    masterTimeline.to(heading, {
+      yPercent: '-=100', // This moves the last heading from its initial position to -400%
+      opacity: 1, // Ensure the last heading fades in and stays visible
+      duration: 1,
+      ease: "none"
+    }, delay);
+  }
+});
+
+
+
+// const workCards = gsap.utils.toArray('.work_card');
+// const workGrid = document.querySelector('.work_grid');
+// // Function to set the height of workGrid based on the highest workCard
+// const cardEach = workGrid.offsetHeight / workCards.length;
+
+// function setWorkGridHeight() {
+//   let maxHeight = 0;
+
+//   workCards.forEach((card) => {
+//     const cardHeight = card.offsetHeight;
+//     if (cardHeight > maxHeight) {
+//       maxHeight = cardHeight;
+//     }
+//   });
+//   workGrid.style.height = `${maxHeight}px`;
+// }
+
+// // Call the function on window load and resize
+// window.addEventListener('load', setWorkGridHeight);
+// window.addEventListener('resize', setWorkGridHeight);
+
+
+// workCards.forEach((card, i) => {
+//   if (i === 0) { // for the first card
+//     card.style.transform = 'translate(0px, 0%)';
+//     card.style.opacity = '1';
+//   } else {
+//     card.style.transform = `translate(0px, ${-100 * i}%)`;
+//     card.style.opacity = '0';
+//   }
+// });
+
+// workCards.forEach((card, i) => {
+//   ScrollTrigger.create({
+//     trigger: workGrid,
+//     start: () => cardEach * i + " top",
+//     end: () => cardEach * (i + 1) + " top",
+//     scrub: true,
+//     markers: false,
+//     onEnter: () => {
+//       if (i !== 0) {
+//         card.classList.add('active');
+//         gsap.to(card, { opacity: 1, y: `${-100 * i}%` });
+//       }
+//     },
+//     onLeave: () => {
+//       card.classList.remove('active');
+//       gsap.to(card, { opacity: 0, y: `${-100 * (i + 1)}%` });
+//     },
+//     onEnterBack: () => {
+//       card.classList.add('active');
+//       gsap.to(card, { opacity: 1, y: `${-100 * i}%` });
+//     },
+//     onLeaveBack: () => {
+//       if (i !== 0) {
+//         card.classList.remove('active');
+//         gsap.to(card, { opacity: 0, y: `${-100 * i}%` });
+//       }
+//     },
+//   });
+// });
+
+
 
 
   // const stickyHeader = document.querySelector('.main-header--sticky');
@@ -273,6 +351,8 @@ lightboxHTML: customLightboxHTML,
   let menu = new Menu();
   menu.init();
 
+  let cardsScroll = new CardsScroll();
+  cardsScroll.init();
   // let search = new Search();
   // search.init();
 

@@ -83,9 +83,8 @@
 }
 
 .layout_component {
-   height: 700vh;
-   flex-direction: column;
-   position: relative
+   height: 500vh;
+   position: relative;
 }
 
 .layout_content {
@@ -96,7 +95,7 @@
    position: -webkit-sticky;
    position: sticky;
    top: 0;
-   overflow: hidden
+   overflow: hidden;
 }
 
 .layout_heading {
@@ -104,7 +103,41 @@
 }
 //
 .work_grid {
-
+   @apply flex flex-col;
 }
 
+
+
+.home {
+   &__click {
+      .spacer,
+      .wrapper {
+      width: 100%;
+      }
+      .card-wrapper {
+      width: 100%;
+      }
+      .card-wrapper:last-child {
+      margin-bottom: 0;
+      }
+
+      .cards {
+      margin: 0 auto;
+      .card {
+
+         min-height: 100vh;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         &.work_card {
+             .grid {
+                 @apply bg-black80;
+             }
+         } 
+     }
+      }
+
+   }
+}
 

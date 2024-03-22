@@ -132,7 +132,9 @@
          align-items: center;
          &.work_card {
              .grid {
-                 @apply bg-black80;
+               .col-first {
+                  @apply bg-black80
+               }
              }
          } 
      }
@@ -141,3 +143,29 @@
    }
 }
 
+.marquee {
+   overflow: hidden;
+   &__inner {
+      @apply min-h-[250px] flex items-center;
+      @apply flex-row flex-auto w-fit;
+   }
+   &__part {
+      @apply shrink-0 flex items-center text-h4 font-secondary text-primary100;
+      &::after {
+         content: "";
+         @apply w-4 h-4 bg-primary60 rounded-full flex mx-2;
+      }
+   }
+}
+.marquee-image {
+   &__inner {
+      @apply flex items-center justify-center gap-6;
+      @apply flex-row flex-auto w-fit ease-in-out transition duration-150;
+      &.toright {
+         @apply -translate-x-1/2;
+      }
+   }
+   &__part {
+      @apply max-h-[302px] w-[360px] flex shrink-0 items-center;
+   }
+}

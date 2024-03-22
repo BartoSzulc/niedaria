@@ -21,6 +21,7 @@ module.exports = {
       '3xl': '1440px',
       '4xl': '1600px',
       '5xl': '1920px',
+      'logo': '1744px',
     },
     fontFamily: {
       primary: ['Bai Jamjuree', 'Helvetica', 'Arial', 'sans-serif'],
@@ -32,6 +33,12 @@ module.exports = {
       wide: '10.4px',
     },
     extend: {
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        'logo': 'repeat(6, minmax(264px, 264px));',
+
+      
+      },
       boxShadow: {
         'cien-1': '-20px 30px 40px 0px rgba(114, 114, 114, 0.20)',
         'cien-2': '10px 10px 10px 0px rgba(40, 50, 80, 0.20);',
@@ -162,10 +169,7 @@ module.exports = {
           maxWidth: "1168px",
           margin: "0 auto",
         },
-        ".wrapper": {
-          paddingLeft: "1.25rem",
-          paddingRight: "1.25rem",
-        },
+
         '.font-size-inherit': {
           fontSize: 'inherit',
         },

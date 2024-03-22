@@ -4,6 +4,9 @@ import Menu from "./components/Menu";
 import CardsScroll from "./components/CardsScroll";
 import Carousels from "./components/Carousels";
 // import Search from "./components/Search";
+import MarqueeText from "./components/MarqueeText";
+import MarqueeImage from "./components/MarqueeImage";
+import HeadingsScroll from "./components/HeadingsScroll";
 import GLightbox from 'glightbox';
 import AOS from 'aos';
 import $ from 'jquery';
@@ -77,72 +80,41 @@ const main = async (err) => {
   }
 );
 
-const headings = gsap.utils.toArray('.layout_heading');
-const layoutComponent = document.querySelector('.layout_component');
 
-const triggerStart = "top top";
+function setupScrollAnimation() {
+  const cardsContainer = document.querySelector('.cards-container');
+  let containerWidth = cardsContainer.scrollWidth;
+  let windowWidth = window.innerWidth;
+  let overflowWidth = containerWidth - windowWidth;
 
-const masterTimeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: layoutComponent,
-    start: triggerStart,
-    scrub: true,
-    markers: false,
-    end: () => layoutComponent.offsetHeight + " bottom",
+  // Ensure there's actual overflow to animate
+  if (overflowWidth > 0) {
+    // Create or update the ScrollTrigger instance
+    ScrollTrigger.create({
+      trigger: cardsContainer,
+      start: 'top +=100',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        const progress = self.progress; // Value from 0 to 1 based on scroll position
+        const xPosition = -progress * overflowWidth; // Calculate the x translation
+        gsap.to(cardsContainer, {x: xPosition, ease: 'none'});
+      },
+      onKill: () => gsap.set(cardsContainer, {x: 0}),
+      markers: true, // For debugging purposes, remove in production
+    });
   }
+}
+
+// Initial setup
+setupScrollAnimation();
+
+// Optional: Re-run the setup function on window resize to account for layout changes
+window.addEventListener('resize', () => {
+  // Kill existing ScrollTriggers to avoid duplicates
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  // Re-setup the scroll animation
+  setupScrollAnimation();
 });
-
-// Set initial positions for the headings
-headings.forEach((heading, i) => {
-  let yPercentValue;
-  
-  if (i === 0) {
-    yPercentValue = 0;
-  } else if (i === 1) {
-    yPercentValue = 0;
-  } else {
-    yPercentValue = -100 * (i - 1);
-  }
-
-  gsap.set(heading, { 
-    yPercent: yPercentValue, 
-    opacity: i === 0 ? 1 : 0
-  }); 
-});
-
-// Adjust the animation logic
-headings.forEach((heading, i) => {
-  const delay = i === 0 ? 0 : '-=0.9';
-  
-  if (i < headings.length - 1) {
-    // For all headings except the last one
-    masterTimeline.to(heading, {
-      yPercent: i === 0 ? -100 : '-=100',
-      opacity: i === 0 ? 0 : 1,
-      duration: 1,
-      ease: "none"
-    }, delay);
-
-    if (i > 0) {
-      masterTimeline.to(heading, {
-        yPercent: '-=100',
-        opacity: 0,
-        duration: 1,
-        ease: "none"
-      }, '+=0.2');
-    }
-  } else {
-    // For the last heading, ensure it stops at -400% and opacity: 1
-    masterTimeline.to(heading, {
-      yPercent: '-=100', // This moves the last heading from its initial position to -400%
-      opacity: 1, // Ensure the last heading fades in and stays visible
-      duration: 1,
-      ease: "none"
-    }, delay);
-  }
-});
-
-
 
 // const workCards = gsap.utils.toArray('.work_card');
 // const workGrid = document.querySelector('.work_grid');
@@ -353,6 +325,15 @@ lightboxHTML: customLightboxHTML,
 
   let cardsScroll = new CardsScroll();
   cardsScroll.init();
+
+  let marqueeText = new MarqueeText();
+  marqueeText.init();
+
+  let headingsScroll = new HeadingsScroll();
+  headingsScroll.init();
+
+  let marqueeImage = new MarqueeImage();
+  marqueeImage.init();
   // let search = new Search();
   // search.init();
 

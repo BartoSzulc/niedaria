@@ -74,7 +74,7 @@
                </p>
             </div>
             <div class="text-white text-B24 font-bold py-8">
-               <ul class="ul-custom flex flex-col gap-6">
+               <ul class="ul-custom ul-custom--center flex flex-col gap-6 text-center">
                   <li>Wykształcenie dziennikarskie</li>
                   <li>Profesjonalny sprzęt oraz programy do fotografii i wideo</li>
                   <li>Doświadczenie w marketingu</li>
@@ -152,13 +152,14 @@
       </div>
    </div>
 </section>
-{{-- <section class="home__slider-first">
+<section class="home__click ">
    <div class="container">
-      <div class="wrapper">
-         <div class="work">
-            <div class="work_grid">
-               <div class="work_card grid grid-cols-12 gap-6 ">
-                  <div class="col-span-6 flex flex-col gap-4">
+      <div class="wrapper light">
+         <div class="cards ">
+           <div class="card-wrapper">
+            <div class="card work_card ">
+               <div class="grid grid-cols-12 gap-6">
+                  <div class="col-first col-span-full lg:col-span-6 flex flex-col gap-4 justify-center">
                      <div class="text-h3 text-primary100 font-secondary">
                         <h2>Social Media</h2>
                      </div>
@@ -166,77 +167,7 @@
                         <p>Mogę prowadzić dla Ciebie strategiczną komunikację abonamentowo lub wesprzeć w
                         wybranym przez Ciebie etapie rozwoju biznesu czy sprzedaży.</p>
                      </div>
-                     <div class="text-B24 font-regular text-black10">
-                        <p>Najczęściej moi Klienci szukają osoby odpowiedzialnej za abonamentową obsługę social mediów: kilku różnych kanałów jednocześnie z przeznaczeniem określonej kwoty miesięcznie na reklamę w Meta Ads. Jeśli jest to produkt lub lokalna marka, często moim zadaniem jest także tworzenie regularnie dedykowanych zdjęć i wideo (np. rolek na Instagram lub TikTok).
-                        </p>
-                     </div>
-                  </div>
-                  <div class="col-start-8 col-span-5">
-                     <img src="{{ asset('images/socialmedia.png') }}" class="rounded" alt="">
-                  </div>
-               </div>
-               <div class="work_card grid grid-cols-12 gap-6">
-               <div class="col-span-6 flex flex-col gap-4">
-                  <div class="text-h3 text-primary100 font-secondary">
-                     <h2>Social Media</h2>
-                  </div>
-                  <div class="text-B24 text-black10 font-bold">
-                     <p>Mogę prowadzić dla Ciebie strategiczną komunikację abonamentowo lub wesprzeć w
-                     wybranym przez Ciebie etapie rozwoju biznesu czy sprzedaży.</p>
-                  </div>
-                  <div class="text-B24 font-regular text-black10">
-                     <p>Najczęściej moi Klienci szukają osoby odpowiedzialnej za abonamentową obsługę social mediów: kilku różnych kanałów jednocześnie z przeznaczeniem określonej kwoty miesięcznie na reklamę w Meta Ads. Jeśli jest to produkt lub lokalna marka, często moim zadaniem jest także tworzenie regularnie dedykowanych zdjęć i wideo (np. rolek na Instagram lub TikTok).
-                     </p>
-                  </div>
-               </div>
-               <div class="col-start-8 col-span-5">
-                  <img src="{{ asset('images/socialmedia.png') }}" class="rounded" alt="">
-               </div>
-            </div>
-            <div class="work_card grid grid-cols-12 gap-6">
-               <div class="col-span-6 flex flex-col gap-4">
-                  <div class="text-h3 text-primary100 font-secondary">
-                     <h2>Social Media</h2>
-                  </div>
-                  <div class="text-B24 text-black10 font-bold">
-                     <p>Mogę prowadzić dla Ciebie strategiczną komunikację abonamentowo lub wesprzeć w
-                     wybranym przez Ciebie etapie rozwoju biznesu czy sprzedaży.</p>
-                  </div>
-                  <div class="text-B24 font-regular text-black10">
-                     <p>Najczęściej moi Klienci szukają osoby odpowiedzialnej za abonamentową obsługę social mediów: kilku różnych kanałów jednocześnie z przeznaczeniem określonej kwoty miesięcznie na reklamę w Meta Ads. Jeśli jest to produkt lub lokalna marka, często moim zadaniem jest także tworzenie regularnie dedykowanych zdjęć i wideo (np. rolek na Instagram lub TikTok).
-                     </p>
-                  </div>
-               </div>
-               <div class="col-start-8 col-span-5">
-                  <img src="{{ asset('images/socialmedia.png') }}" class="rounded" alt="">
-               </div>
-            </div>
-            </div>
-         </div>
-         
-            
-         
-      </div>
-   </div>
-      
-   </div>
-</section> --}}
-<section class="home__click ">
-   <div class="container px-0">
-      <div class="wrapper light">
-         <div class="cards ">
-           <div class="card-wrapper">
-            <div class="card work_card ">
-               <div class="grid grid-cols-12 gap-6  px-5">
-                  <div class="col-span-6 flex flex-col gap-4">
-                     <div class="text-h3 text-primary100 font-secondary">
-                        <h2>Social Media1</h2>
-                     </div>
-                     <div class="text-B24 text-black10 font-bold">
-                        <p>Mogę prowadzić dla Ciebie strategiczną komunikację abonamentowo lub wesprzeć w
-                        wybranym przez Ciebie etapie rozwoju biznesu czy sprzedaży.</p>
-                     </div>
-                     <div class="text-B24 font-regular text-black10">
+                     <div class="text-B24 font-light text-black10">
                         <p>Najczęściej moi Klienci szukają osoby odpowiedzialnej za abonamentową obsługę social mediów: kilku różnych kanałów jednocześnie z przeznaczeniem określonej kwoty miesięcznie na reklamę w Meta Ads. Jeśli jest to produkt lub lokalna marka, często moim zadaniem jest także tworzenie regularnie dedykowanych zdjęć i wideo (np. rolek na Instagram lub TikTok).
                         </p>
                      </div>
@@ -250,22 +181,19 @@
            </div>
            <div class="card-wrapper">
             <div class="card work_card ">
-               <div class="grid grid-cols-12 gap-6 px-5">
-                  <div class="col-span-6 flex flex-col gap-4">
+               <div class="grid grid-cols-12 gap-6">
+                  <div class="col-first col-span-full lg:col-span-6 flex flex-col gap-4 justify-center">
                      <div class="text-h3 text-primary100 font-secondary">
-                        <h2>Social Media2</h2>
+                        <h2>Promocja Eventów</h2>
                      </div>
                      <div class="text-B24 text-black10 font-bold">
-                        <p>Mogę prowadzić dla Ciebie strategiczną komunikację abonamentowo lub wesprzeć w
-                        wybranym przez Ciebie etapie rozwoju biznesu czy sprzedaży.</p>
+                        <p>Obsługa od A do Z. Wypromuję Twoje wydarzenie w social
+                           mediach, zaplanuję komunikację, stworzę wideo i foto relację w dniu eventu.</p>
                      </div>
-                     <div class="text-B24 font-regular text-black10">
-                        <p>Najczęściej moi Klienci szukają osoby odpowiedzialnej za abonamentową obsługę social mediów: kilku różnych kanałów jednocześnie z przeznaczeniem określonej kwoty miesięcznie na reklamę w Meta Ads. Jeśli jest to produkt lub lokalna marka, często moim zadaniem jest także tworzenie regularnie dedykowanych zdjęć i wideo (np. rolek na Instagram lub TikTok).
-                        </p>
-                     </div>
+                     
                   </div>
                   <div class="col-start-8 col-span-5">
-                     <img src="{{ asset('images/socialmedia.png') }}" class="rounded-2xl" alt="">
+                     <img src="{{ asset('images/promocjaeventow.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
                   </div>
                </div>
                
@@ -273,22 +201,18 @@
            </div>
            <div class="card-wrapper">
             <div class="card work_card ">
-               <div class="grid grid-cols-12 gap-6  px-5">
-                  <div class="col-span-6 flex flex-col gap-4">
+               <div class="grid grid-cols-12 gap-6">
+                  <div class="col-first col-span-full lg:col-span-6 flex flex-col gap-4 justify-center">
                      <div class="text-h3 text-primary100 font-secondary">
-                        <h2>Social Media3</h2>
+                        <h2>Fotografia</h2>
                      </div>
                      <div class="text-B24 text-black10 font-bold">
-                        <p>Mogę prowadzić dla Ciebie strategiczną komunikację abonamentowo lub wesprzeć w
-                        wybranym przez Ciebie etapie rozwoju biznesu czy sprzedaży.</p>
+                        <p>Gdy biznes potrzebuje wysokiej jakości zdjęć: na stronę internetową, na profilowe, do CV, do oferty, do reklamy. Zajmuję się fotografią biznesową, produktową oraz eventową (w tym reportażową). </p>
                      </div>
-                     <div class="text-B24 font-regular text-black10">
-                        <p>Najczęściej moi Klienci szukają osoby odpowiedzialnej za abonamentową obsługę social mediów: kilku różnych kanałów jednocześnie z przeznaczeniem określonej kwoty miesięcznie na reklamę w Meta Ads. Jeśli jest to produkt lub lokalna marka, często moim zadaniem jest także tworzenie regularnie dedykowanych zdjęć i wideo (np. rolek na Instagram lub TikTok).
-                        </p>
-                     </div>
+                     
                   </div>
                   <div class="col-start-8 col-span-5">
-                     <img src="{{ asset('images/socialmedia.png') }}" class="rounded-2xl" alt="">
+                     <img src="{{ asset('images/fotografia.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
                   </div>
                </div>
                
@@ -296,22 +220,68 @@
            </div>
            <div class="card-wrapper">
             <div class="card work_card ">
-               <div class="grid grid-cols-12 gap-6  px-5">
-                  <div class="col-span-6 flex flex-col gap-4">
+               <div class="grid grid-cols-12 gap-6">
+                  <div class="col-first col-span-full lg:col-span-6 flex flex-col gap-4 justify-center">
                      <div class="text-h3 text-primary100 font-secondary">
-                        <h2>Social Media4</h2>
+                        <h2>Wideo</h2>
                      </div>
                      <div class="text-B24 text-black10 font-bold">
-                        <p>Mogę prowadzić dla Ciebie strategiczną komunikację abonamentowo lub wesprzeć w
-                        wybranym przez Ciebie etapie rozwoju biznesu czy sprzedaży.</p>
+                        <p>Stworzę profesjonalne wideo reklamowe w wysokiej jakości sprzętem z dedykowanym dla
+                        Twojej firmy scenariuszem i wsparciem w przygotowaniu najlepszych treści wypowiedzi.</p>
                      </div>
-                     <div class="text-B24 font-regular text-black10">
-                        <p>Najczęściej moi Klienci szukają osoby odpowiedzialnej za abonamentową obsługę social mediów: kilku różnych kanałów jednocześnie z przeznaczeniem określonej kwoty miesięcznie na reklamę w Meta Ads. Jeśli jest to produkt lub lokalna marka, często moim zadaniem jest także tworzenie regularnie dedykowanych zdjęć i wideo (np. rolek na Instagram lub TikTok).
-                        </p>
+                     
+                  </div>
+                  <div class="col-start-8 col-span-5">
+                     <img src="{{ asset('images/wideo.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
+                  </div>
+               </div>
+               
+            </div>
+           </div>
+           <div class="card-wrapper">
+            <div class="card work_card ">
+               <div class="grid grid-cols-12 gap-6">
+                  <div class="col-first col-span-full lg:col-span-6 flex flex-col gap-4 justify-center">
+                     <div class="text-h3 text-primary100 font-secondary">
+                        <h2>Reklama</h2>
+                     </div>
+                     <div class="text-B24 text-black10 font-bold">
+                        <p>Pracuję przede wszystkim w narzędziu Meta Ads, dzięki któremu konfiguruję reklamy na
+                           Twoim Facebooku i Instagramie, kierujące ruch na www lub zwiększające sprzedaż.</p>
+                     </div>
+                     <div class="mt-4 lg:mt-6">
+                        <div class="text-h4 text-primary60 font-secondary">
+                           <h3>Możemy:</h3>
+                        </div>
+                        <ul class="ul-custom text-black10 text-B20 font-bold">
+                           <li>zwiększać ilość osób, która zobaczy Twoje treści</li>
+                           <li>zwiększać ilość osób, która zobaczy Twoje treści</li>
+                           <li>zwiększać ilość osób, która zobaczy Twoje treści</li>
+                           <li>zwiększać ilość osób, która zobaczy Twoje treści</li>
+                           <li>zwiększać ilość osób, która zobaczy Twoje treści</li>
+                        </ul>
                      </div>
                   </div>
                   <div class="col-start-8 col-span-5">
-                     <img src="{{ asset('images/socialmedia.png') }}" class="rounded-2xl" alt="">
+                     <img src="{{ asset('images/reklama.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
+                  </div>
+               </div>
+               
+            </div>
+           </div>
+           <div class="card-wrapper">
+            <div class="card work_card ">
+               <div class="grid grid-cols-12 gap-6">
+                  <div class="col-first col-span-full lg:col-span-6 flex flex-col gap-4 justify-center">
+                     <div class="text-h3 text-primary100 font-secondary">
+                        <h2>Inne</h2>
+                     </div>
+                     <div class="text-B24 text-black10 font-bold">
+                        <p>Mam doświadczenie w marketingu, a dzięki moim Partnerom biznesowym, mogę pomóc Ci zrobić logo, stronę www czy materiały graficzne i drukowane.</p>
+                     </div>
+                  </div>
+                  <div class="col-start-8 col-span-5">
+                     <img src="{{ asset('images/inne.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
                   </div>
                </div>
                
@@ -321,55 +291,118 @@
       </div>
    </div>
 </section>
-<section class="home__helping py-11">
-   <div class="container flex flex-col gap-8 items-center text-center justify-center">
-      
-      <div class="text-h3 font-secondary text-primary100">
-         <h2>Pomagam szeroko: <span class="text-primary60">od contentu, przez komunikację, po reklamę.</span></h2>
+<section class="home__trustedme py-half lg:py-full overflow-hidden">
+   <div class="container">
+      <div class="w-full text-center text-h2 font-secondary text-primary100">
+         <h2>Zaufali mi</h2>
       </div>
-      <div class="text-B24 text-black10">
-         <p>Jeśli nie masz czasu na
-         social media, brakuje Ci materiałów, chcesz dbać o profesjonalny wizerunek lub
-         potrzebujesz <br/>
-         wypromować nowy projekt lub firmę - mam w tym doświadczenie.</p>
-      </div>
-      <div class="text-B24 text-primary100">
-         <p>Każda oferta jest szyta na miarę, ale poniżej możesz sprawdzić najczęściej wybierane usługi.</p>
+   </div>
+   <div class="px-6 cards-container gap-6 logo:items-center logo:justify-center max-logo:w-fit grid grid-cols-logo mt-[86px]">
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+      <div class="card w-full h-[264px] bg-primary100"></div>
+   </div>
+</section>
+<section class="home__case-study">
+   <div class="container">
+      <div class="text-h2 font-secondary text-primary100 mb-[70px]">
+         <h2>Case Study</h2>
       </div>
    </div>
 </section>
-<section class="home__helping py-11">
-   <div class="container flex flex-col gap-8 items-center text-center justify-center">
-      
-      <div class="text-h3 font-secondary text-primary100">
-         <h2>Pomagam szeroko: <span class="text-primary60">od contentu, przez komunikację, po reklamę.</span></h2>
-      </div>
-      <div class="text-B24 text-black10">
-         <p>Jeśli nie masz czasu na
-         social media, brakuje Ci materiałów, chcesz dbać o profesjonalny wizerunek lub
-         potrzebujesz <br/>
-         wypromować nowy projekt lub firmę - mam w tym doświadczenie.</p>
-      </div>
-      <div class="text-B24 text-primary100">
-         <p>Każda oferta jest szyta na miarę, ale poniżej możesz sprawdzić najczęściej wybierane usługi.</p>
+<section class="home__realizacje">
+   <div class="container">
+      <div class="text-h2 font-secondary text-primary100 mb-9">
+         <h2>Realizacje</h2>
       </div>
    </div>
-</section>
-<section class="home__helping py-11">
-   <div class="container flex flex-col gap-8 items-center text-center justify-center">
-      
-      <div class="text-h3 font-secondary text-primary100">
-         <h2>Pomagam szeroko: <span class="text-primary60">od contentu, przez komunikację, po reklamę.</span></h2>
+<div class="marquee-image__wrapper flex flex-col gap-6 overflow-hidden">
+   <div class="marquee-image__inner toleft">
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
       </div>
-      <div class="text-B24 text-black10">
-         <p>Jeśli nie masz czasu na
-         social media, brakuje Ci materiałów, chcesz dbać o profesjonalny wizerunek lub
-         potrzebujesz <br/>
-         wypromować nowy projekt lub firmę - mam w tym doświadczenie.</p>
+      <div class="marquee-image__part ">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
       </div>
-      <div class="text-B24 text-primary100">
-         <p>Każda oferta jest szyta na miarę, ale poniżej możesz sprawdzić najczęściej wybierane usługi.</p>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part ">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
       </div>
    </div>
+   <div class="marquee-image__inner toright ">
+      <div class="marquee-image__part" >
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part" >
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+      <div class="marquee-image__part">
+         <img class="aspect-[360/202] object-cover rounded-2xl" src="{{ asset('images/realizacja1.png') }}" alt="">
+      </div>
+   </div>
+</div>
 </section>
+
+<section class="marquee">
+   <div class="marquee__inner" aria-hidden="true" ref="inner">
+     <div class="marquee__part">
+      <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
+     </div>
+     <div class="marquee__part">
+      <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
+     </div>
+     <div class="marquee__part">
+      <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
+     </div>
+     <div class="marquee__part">
+      <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
+     </div>
+     <div class="marquee__part">
+      <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
+     </div>
+     <div class="marquee__part">
+      <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
+     </div>
+   </div>
+</section>
+
+
 @endsection

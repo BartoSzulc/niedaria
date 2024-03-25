@@ -24,7 +24,7 @@ const main = async (err) => {
   const lenis = new Lenis()
 
   lenis.on('scroll', (e) => {
-    console.log(e)
+   // console.log(e)
   })
   
   lenis.on('scroll', ScrollTrigger.update)
@@ -83,10 +83,13 @@ const main = async (err) => {
 
 function setupScrollAnimation() {
   const cardsContainer = document.querySelector('.cards-container');
-  let containerWidth = cardsContainer.scrollWidth;
-  let windowWidth = window.innerWidth;
-  let overflowWidth = containerWidth - windowWidth;
+  let containerWidth = cardsContainer.offsetWidth;
+  let windowScrollWidth = document.documentElement.scrollWidth;
+  let overflowWidth = containerWidth - windowScrollWidth;
 
+  console.log("container", containerWidth);
+  console.log("window scroll width", windowScrollWidth);
+  console.log("overflow", overflowWidth);
   // Ensure there's actual overflow to animate
   if (overflowWidth > 0) {
     // Create or update the ScrollTrigger instance
@@ -105,78 +108,14 @@ function setupScrollAnimation() {
   }
 }
 
-// Initial setup
-setupScrollAnimation();
 
-// Optional: Re-run the setup function on window resize to account for layout changes
+setupScrollAnimation();
 window.addEventListener('resize', () => {
-  // Kill existing ScrollTriggers to avoid duplicates
   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  // Re-setup the scroll animation
   setupScrollAnimation();
 });
 
-// const workCards = gsap.utils.toArray('.work_card');
-// const workGrid = document.querySelector('.work_grid');
-// // Function to set the height of workGrid based on the highest workCard
-// const cardEach = workGrid.offsetHeight / workCards.length;
 
-// function setWorkGridHeight() {
-//   let maxHeight = 0;
-
-//   workCards.forEach((card) => {
-//     const cardHeight = card.offsetHeight;
-//     if (cardHeight > maxHeight) {
-//       maxHeight = cardHeight;
-//     }
-//   });
-//   workGrid.style.height = `${maxHeight}px`;
-// }
-
-// // Call the function on window load and resize
-// window.addEventListener('load', setWorkGridHeight);
-// window.addEventListener('resize', setWorkGridHeight);
-
-
-// workCards.forEach((card, i) => {
-//   if (i === 0) { // for the first card
-//     card.style.transform = 'translate(0px, 0%)';
-//     card.style.opacity = '1';
-//   } else {
-//     card.style.transform = `translate(0px, ${-100 * i}%)`;
-//     card.style.opacity = '0';
-//   }
-// });
-
-// workCards.forEach((card, i) => {
-//   ScrollTrigger.create({
-//     trigger: workGrid,
-//     start: () => cardEach * i + " top",
-//     end: () => cardEach * (i + 1) + " top",
-//     scrub: true,
-//     markers: false,
-//     onEnter: () => {
-//       if (i !== 0) {
-//         card.classList.add('active');
-//         gsap.to(card, { opacity: 1, y: `${-100 * i}%` });
-//       }
-//     },
-//     onLeave: () => {
-//       card.classList.remove('active');
-//       gsap.to(card, { opacity: 0, y: `${-100 * (i + 1)}%` });
-//     },
-//     onEnterBack: () => {
-//       card.classList.add('active');
-//       gsap.to(card, { opacity: 1, y: `${-100 * i}%` });
-//     },
-//     onLeaveBack: () => {
-//       if (i !== 0) {
-//         card.classList.remove('active');
-//         gsap.to(card, { opacity: 0, y: `${-100 * i}%` });
-//       }
-//     },
-//   });
-// });
 
 
 

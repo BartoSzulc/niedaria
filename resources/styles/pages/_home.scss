@@ -109,7 +109,7 @@
 
 
 .home {
-   &__click {
+   &__offer {
       .spacer,
       .wrapper {
       width: 100%;
@@ -131,11 +131,11 @@
          justify-content: center;
          align-items: center;
          &.work_card {
-             .grid {
-               .col-first {
-                  @apply bg-black80
-               }
-             }
+            .grid {
+            .col-first {
+               @apply bg-black80
+            }
+            }
          } 
      }
       }
@@ -161,11 +161,15 @@
    &__inner {
       @apply flex items-center justify-center gap-6;
       @apply flex-row flex-auto w-fit ease-in-out transition duration-150;
-      &.toright {
-         @apply -translate-x-1/2;
-      }
+      
+      // &.toright {
+      //    @apply -translate-x-1/2;
+      // }
    }
    &__part {
       @apply max-h-[302px] w-[360px] flex shrink-0 items-center;
+      
    }
 }
+
+

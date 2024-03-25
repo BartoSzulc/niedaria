@@ -40,8 +40,7 @@ module.exports = {
       
       },
       boxShadow: {
-        'cien-1': '-20px 30px 40px 0px rgba(114, 114, 114, 0.20)',
-        'cien-2': '10px 10px 10px 0px rgba(40, 50, 80, 0.20);',
+        'cien-1': '0px 0px 32px rgba(0, 0, 0, 0.2);',
        
       },
       dropShadow: {

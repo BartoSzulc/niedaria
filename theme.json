@@ -1329,6 +1329,16 @@
           "color": "#525252",
           "name": "Black60",
           "slug": "black60"
+        },
+        {
+          "color": "#7a7a7a",
+          "name": "Black40",
+          "slug": "black40"
+        },
+        {
+          "color": "#a3a3a3",
+          "name": "Black20",
+          "slug": "black20"
         }
       ]
     },

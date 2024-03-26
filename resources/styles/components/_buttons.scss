@@ -1,18 +1,26 @@
 .btn {
-    
-    @apply text-button text-color1 uppercase rounded transition-all duration-500 ease-in-out h-half lg:h-60 border box-border flex items-center justify-center text-center;
-    span {
-        @apply relative z-10;
-    }
-    &:hover {
-        @apply text-color5;
-        @apply bg-color1 border-color1;
-    }
     &--primary {
-        @apply bg-color3 border-color3;
+        @apply text-B24 font-bold text-primary100;
+        svg {
+            path, ellipse {
+                @apply transition-all duration-500 ease-in-out;
+            }
+        }
+        &:not(:hover) {
+            svg {
+                path {
+                    @apply stroke-primary100; 
+                }
+                ellipse {
+                    @apply fill-transparent;
+                }
+            }
+           
+        }
     }
-    &--secondary {
-        @apply bg-color5 border-color3;
+    span {
+        @apply flex items-center justify-end gap-2;
     }
-
+    
+    
 }

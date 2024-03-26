@@ -5,41 +5,41 @@
        </div>
     </div>
     <div class="px-6 cards-container gap-6 logo:items-center logo:justify-center max-logo:w-fit grid grid-cols-logo mt-[86px]">
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
-       <div class="card w-full h-[264px] rounded-3xl">
-         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-3xl">
+       <div class="card w-full h-[264px] rounded-2xl">
+         <img src="{{asset('images/logo_one.png')}}" alt="" class="rounded-2xl">
        </div>
     </div>
  </section>

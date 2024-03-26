@@ -66,6 +66,8 @@ module.exports = {
       black10: '#B8B8B8',
       black80: '#222222',
       black60: '#525252',
+      black40: '#7A7A7A',
+      black20: '#A3A3A3',
 
     },
     spacing: {

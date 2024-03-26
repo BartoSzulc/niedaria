@@ -14,6 +14,7 @@
 @include('sections.home-partials.realizacje')
 @include('sections.home-partials.testimonials')
 @include('sections.home-partials.marqueeText')
+@include('sections.home-partials.contact')
 
 
 @endsection

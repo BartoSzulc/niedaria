@@ -1,8 +1,13 @@
-<div class="flex flex-row items-center sm:gap-5 gap-3 md:gap-30 lg:gap-60 h-full">
+<div class="flex items-center">
     @if (has_nav_menu('primary_navigation'))
-      <nav class="nav-primary hidden lg:block text-color1 h-full" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav font-secondary text-menu flex items-center xl:space-x-60 lg:space-x-30 md:space-x-5', 'echo' => false]) !!}
-      </nav>
+    <nav class="nav-primary flex items-center justify-end h-full" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+      {!! wp_nav_menu([
+        'theme_location' => 'primary_navigation', 
+        'menu_class' => 'nav font-light text-B24 flex items-center gap-8 ', 
+        'add_li_class' => 'text-white transition-all duration-500 ease-in-out hover:text-primary100',
+        'echo' => false
+        ])!!}
+    </nav>
     @endif
     <div class="grow-[0] lg:hidden w-full flex justify-end">
         <button id="menuButton" class="text-color1  w-5 h-5 relative focus:outline-none  js-button">

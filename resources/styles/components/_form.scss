@@ -1,30 +1,33 @@
 .form {
     
     &__grid {
-        @apply grid grid-cols-10 gap-3 lg:gap-5;
+        @apply grid grid-cols-10 gap-6;
         &-col {
-            @apply col-span-full grid gap-3 lg:gap-5 items-center;
+            @apply col-span-full grid gap-6 items-center;
+            label {
+                @apply pl-2 pr-4 text-B20 font-bold text-black20;
+            }
             input, textarea {
-                @apply border rounded p-3 lg:p-[18px] text-sm lg:text-base box-border w-full;
-                @apply transition-all duration-500 ease-in-out;
+                @apply border rounded-lg py-2 px-4 box-border w-full;
+                @apply transition-all duration-500 ease-in-out bg-transparent text-white font-bold text-B24;
                 &::placeholder {
-                    @apply text-color1/50;
+                    @apply text-black40 font-light;
                 }
                 
                 &:not(:placeholder-shown) {
-                    @apply border-color3
+                    @apply border-primary100;
                 }
                 &:placeholder-shown {
-                    @apply border-colorObramowanie;
+                    @apply border-white;
                 }
                 &:focus, &:hover {
-                    @apply border-color3 outline-0;
+                    @apply border-primary100 outline-0;
                 }
              
     
             }
             textarea {
-                @apply h-[140px];
+                @apply h-[224px];
             }
             &--col-3 {
                 @apply grid-cols-1 lg:grid-cols-3;
@@ -46,11 +49,12 @@ input[type="checkbox"] {
 
 // validation errors ourput bottom of form
 .wpcf7-not-valid-tip {
-    @apply mt-0 absolute text-xs left-0 -top-4 font-bold;
+    @apply mt-0 absolute text-xs left-0 -bottom-4 font-bold;
     @apply transition-all duration-500 ease-in-out;
 }
+
 .wpcf7-response-output {
-    @apply text-color1 mt-14 border-color2 rounded border w-fit mx-auto bg-white transition-all text-xs md:text-base #{!important};
+    @apply hidden #{!important};
 }
 
 .wpcf7-validation-errors {
@@ -66,18 +70,21 @@ input[type="checkbox"] {
 //checkboxes
 .wpcf7-acceptance {
    @apply relative text-xs #{!important};
-   label span:before {
-    @apply animate-scaleUp;
-       @apply flex items-center justify-center transition;
-       @apply h-[34px] w-[32px];
-       @apply shrink-0;
-       @apply relative;
-       @apply mr-2.5 lg:mr-[15px];
-       content: "";
-       background-image: url("data:image/svg+xml,%3Csvg width='32' height='34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='.5' y='.5' width='30.517' height='33' rx='3.5' fill='%23fff' stroke='%230D0E16'/%3E%3C/svg%3E");
-       @apply bg-no-repeat bg-center;
-       
-   }
+   label {
+    @apply text-base font-light p-0 flex h-fit;
+        span:before {
+        @apply animate-scaleUp text-lg;
+        @apply flex items-center justify-center transition;
+        @apply h-[32px] w-[32px];
+        @apply shrink-0;
+        @apply relative;
+        @apply mr-2.5 lg:mr-[15px];
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z' stroke='%23F9B208' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        @apply bg-no-repeat bg-center;
+            
+        }
+    }
    a {
         @apply underline transition-colors duration-500;
         &:hover {
@@ -90,5 +97,5 @@ input[type="checkbox"] {
 }
 .wpcf7-acceptance label > input:checked + span:before {
     @apply animate-scaleUp;
-    background-image: url("data:image/svg+xml,%3Csvg width='32' height='34' viewBox='0 0 32 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='30.5175' height='33' rx='3.5' fill='white' stroke='%230D0E16'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5649 15L8.71094 17L14.2728 23L23.5427 13L21.6887 11L14.2728 19L10.5649 15Z' fill='%230D0E16'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.5 13L14.1625 20L10.5 16.5' stroke='%23F9B208' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z' stroke='%23F9B208' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }

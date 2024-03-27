@@ -39,7 +39,7 @@
                       
                    </div>
                    <div class="lg:col-start-8 lg:col-span-5 col-span-full">
-                      <img src="{{ asset('images/promocjaeventow.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
+                      <img src="{{ asset('images/promocjaeventow.png') }}" class="rounded-2xl aspect-[456/560] lg:h-[560px] h-[440px] object-cover" alt="">
                    </div>
                 </div>
                 
@@ -58,7 +58,7 @@
                       
                    </div>
                    <div class="lg:col-start-8 lg:col-span-5 col-span-full">
-                      <img src="{{ asset('images/fotografia.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
+                      <img src="{{ asset('images/fotografia.png') }}" class="rounded-2xl aspect-[456/560] lg:h-[560px] h-[440px] object-cover" alt="">
                    </div>
                 </div>
                 
@@ -78,7 +78,7 @@
                       
                    </div>
                    <div class="lg:col-start-8 lg:col-span-5 col-span-full">
-                      <img src="{{ asset('images/wideo.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
+                      <img src="{{ asset('images/wideo.png') }}" class="rounded-2xl aspect-[456/560] lg:h-[560px] h-[440px] object-cover" alt="">
                    </div>
                 </div>
                 
@@ -109,7 +109,7 @@
                       </div>
                    </div>
                    <div class="lg:col-start-8 lg:col-span-5 col-span-full">
-                      <img src="{{ asset('images/reklama.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
+                      <img src="{{ asset('images/reklama.png') }}" class="rounded-2xl aspect-[456/560] lg:h-[560px] h-[440px] object-cover" alt="">
                    </div>
                 </div>
                 
@@ -127,7 +127,7 @@
                       </div>
                    </div>
                    <div class="lg:col-start-8 lg:col-span-5 col-span-full">
-                      <img src="{{ asset('images/inne.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
+                      <img src="{{ asset('images/inne.png') }}" class="rounded-2xl aspect-[456/560] lg:h-[560px] h-[440px] object-cover" alt="">
                    </div>
                 </div>
                 

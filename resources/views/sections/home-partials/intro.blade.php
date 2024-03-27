@@ -1,7 +1,7 @@
-<section class="home__intro pt-[150px] pb-[72px]">
+<section class="home__intro lg:pt-[150px] lg:pb-[72px] py-20" @if ($id) id="{{ $id }}" @endif>
     <div class="container">
        <div class="w-full text-center">
-          <div class="text-h2 font-secondary font-bold mb-11 text-primary100">
+          <div class="text-h3 lg:text-h2 font-secondary font-bold mb-11 text-primary100">
              <h2>Łączę marketingowe kropki w skuteczną całość</h2>
           </div>
           <div class="flex flex-col text-center gap-5">
@@ -12,7 +12,7 @@
                    Klientów.
                 </p>
              </div>
-             <div class="text-white text-B24 font-bold py-8">
+             <div class="text-white lg:text-B24 font-bold py-8 text-B20">
                 <ul class="ul-custom ul-custom--center flex flex-col gap-6 text-center">
                    <li>Wykształcenie dziennikarskie</li>
                    <li>Profesjonalny sprzęt oraz programy do fotografii i wideo</li>

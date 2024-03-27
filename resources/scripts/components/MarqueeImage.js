@@ -53,7 +53,16 @@ export default class MarqueeImage extends Component {
       - current() - returns the current index (if an animation is in-progress, it reflects the final index)
       - times - an Array of the times on the timeline where each element hits the "starting" spot. There's also a label added accordingly, so "label1" is when the 2nd element reaches the start.
       */
+      
       function horizontalLoop(items, config) {
+        const media = window.innerWidth;
+        let gapPX;
+        if (media > 1024) {
+          gapPX = -16;
+        } else {
+          gapPX = -10;
+        }
+
         items = gsap.utils.toArray(items);
         config = config || {};
         let tl = gsap.timeline({
@@ -70,7 +79,7 @@ export default class MarqueeImage extends Component {
           curIndex = 0,
           pixelsPerSecond = (config.speed || 1) * 100,
           snap = config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1),
-          gap = -16, // Gap between elements
+          gap = gapPX, // Gap between elements
           totalWidth,
           curX,
           distanceToStart,

@@ -22,6 +22,7 @@ module.exports = {
       '4xl': '1600px',
       '5xl': '1920px',
       'logo': '1744px',
+      
     },
     fontFamily: {
       primary: ['Bai Jamjuree', 'Helvetica', 'Arial', 'sans-serif'],

@@ -1,4 +1,4 @@
-<section class="home__hero section_header">
+<section class="home__hero section_header" @if ($id) id="{{ $id }}" @endif> 
     <div class="header_component">
        <div class="header_content-wrapper">
           <div class="header_content">
@@ -6,7 +6,7 @@
                 <div class="container-small">
                    <div class="padding-section-large spacer-xsmall">
                       <div class="text-align-center">
-                         <div class="margin-bottom text-h2">
+                         <div class="margin-bottom text-h3 lg:text-h2">
                             <h1 class="text-primary100 hero_text text-center font-bold font-secondary">
                                 Treściwie dla biznesu <br/>i eventów
                             </h1>
@@ -26,13 +26,13 @@
                 <div class="header_image-wrapper hide-mobile-landscape">
                     <img src="{{asset('images/hero_image_2.png')}}" class="header_image" alt="">
                 </div>
-                <div class="header_image-wrapper hide-mobile-landscape">
+                <div class="header_image-wrapper ">
                     <img src="{{asset('images/hero_image_3.png')}}" class="header_image" alt="">
                 </div>
                 <div class="header_image-wrapper hide-mobile-landscape">
                     <img src="{{asset('images/hero_image_4.png')}}" class="header_image" alt="">
                 </div>
-                <div class="header_image-wrapper hide-mobile-landscape">
+                <div class="header_image-wrapper ">
                     <img src="{{asset('images/hero_image-main.png')}}" class="header_image" alt="">
                 </div>
                 <div class="header_image-wrapper hide-mobile-landscape">
@@ -41,7 +41,7 @@
                 <div class="header_image-wrapper hide-mobile-landscape">
                     <img src="{{asset('images/hero_image_6.png')}}" class="header_image" alt="">
                 </div>
-                <div class="header_image-wrapper hide-mobile-landscape">
+                <div class="header_image-wrapper">
                     <img src="{{asset('images/hero_image_7.png')}}" class="header_image" alt="">
                 </div>
                 <div class="header_image-wrapper hide-mobile-landscape">

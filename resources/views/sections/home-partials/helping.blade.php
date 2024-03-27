@@ -1,4 +1,4 @@
-<section class="home__helping py-11">
+<section class="home__helping py-20 lg:py-11" @if ($id) id="{{ $id }}" @endif>
     <div class="container flex flex-col gap-8 items-center text-center justify-center">
        
        <div class="text-h3 font-secondary text-primary100">

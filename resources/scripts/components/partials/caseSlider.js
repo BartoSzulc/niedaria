@@ -123,6 +123,7 @@ export function initCaseSlider() {
     });
     
     function calculateAndSetHeightForActiveSlide(swiperInstance) {
+      if (window.innerWidth > 1024) {
       const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
       const calculateHeightElements = activeSlide.querySelectorAll('.calculateHeight');
 
@@ -148,6 +149,5 @@ export function initCaseSlider() {
           calculateHeightElement.style.height = calculateHeight + 'px';
         }); 
       }
-
-    
+    }
 }

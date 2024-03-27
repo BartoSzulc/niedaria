@@ -11,7 +11,7 @@ import AOS from 'aos';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from '@studio-freight/lenis'
-
+import $ from 'jquery';
 import { initModalSuccess } from './components/partials/modalSuccess';
 /**
  * app.main
@@ -35,19 +35,11 @@ const main = async (err) => {
   gsap.ticker.lagSmoothing(0)
 
 
-  gsap.fromTo(".header_images-layout",
-    { scale: 3.2 },
-    { // end state
-      scale: 1,
-      scrollTrigger: {
-        trigger: ".section_header",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-        markers : false,
-      }
-    }
-  );
+
+
+const body = document.querySelector('body');
+
+if (body.classList.contains('home')) {
   gsap.fromTo(".image-overlay-layer", 
   { opacity: 1 }, // start state
   { // end state
@@ -61,49 +53,100 @@ const main = async (err) => {
     }
   }
 );
+if (window.innerWidth > 1024) {
+    gsap.fromTo(".hero_text",
+    { 
+      fontSize: "clamp(4rem, 4vw + 1.5rem, 4.5rem)", // h2 to h3 fontSize
+      lineHeight: "clamp(4.813rem, 5vw + 1.25rem, 5.375rem);", // h2 to h3 lineHeight
+    },
+    { // end state
+      fontSize: "clamp(4.5rem, 5.5vw + 2rem, 6.625rem)", // h1 to h2 fontSize
+      lineHeight: "clamp(5.375rem, 5.5vw + 2rem, 7.938rem)", // h1 to h2 lineHeight
+      scrollTrigger: {
+        trigger: ".section_header",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        markers: false,
+      }
+    }
+  );
+} else {
   gsap.fromTo(".hero_text",
-  { 
-    fontSize: "clamp(4rem, 4vw + 1.5rem, 4.5rem)", // h2 to h3 fontSize
-    lineHeight: "clamp(4.813rem, 5vw + 1.25rem, 5.375rem);", // h2 to h3 lineHeight
-  },
+    {
+      fontSize: "clamp(2.75rem, 4vw + 1rem, 4rem)", // h2 to h3 fontSize
+      lineHeight: "clamp(3.563rem, 5vw + 1rem, 4.813rem)", // h2 to h3 lineHeight
+    },
+    { // end state
+      fontSize: "clamp(4rem, 4vw + 1.5rem, 4.5rem)", // h1 to h2 fontSize
+      lineHeight: "clamp(4.813rem, 5vw + 1.25rem, 5.375rem)", // h1 to h2 lineHeight
+      scrollTrigger: {
+        trigger: ".section_header",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        markers: false,
+      }
+    }
+  );
+}
+if (window.innerWidth > 1440) {
+  gsap.fromTo(".header_images-layout",
+  { scale: 3.2 },
   { // end state
-    fontSize: "clamp(4.5rem, 5.5vw + 2rem, 6.625rem)", // h1 to h2 fontSize
-    lineHeight: "clamp(5.375rem, 5.5vw + 2rem, 7.938rem)", // h1 to h2 lineHeight
+    scale: 1,
     scrollTrigger: {
       trigger: ".section_header",
       start: "top top",
       end: "bottom bottom",
       scrub: true,
-      markers: false,
+      markers : false,
     }
   }
 );
-
+} else {
+  gsap.fromTo(".header_images-layout",
+  { scale: 3.5 },
+  { // end state
+    scale: 1,
+    scrollTrigger: {
+      trigger: ".section_header",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      markers : false,
+    }
+  }
+);
+}
 
 function setupScrollAnimation() {
-  const cardsContainer = document.querySelector('.cards-container');
-  let containerWidth = cardsContainer.offsetWidth;
-  let windowScrollWidth = document.documentElement.scrollWidth;
-  let overflowWidth = containerWidth - windowScrollWidth;
+  if (window.innerWidth > 1024) {
+    const cardsContainer = document.querySelector('.cards-container');
+    let containerWidth = cardsContainer.offsetWidth;
+    let windowScrollWidth = document.documentElement.scrollWidth;
+    let overflowWidth = containerWidth - windowScrollWidth;
 
-  // console.log("container", containerWidth);
-  // console.log("window scroll width", windowScrollWidth);
-  // console.log("overflow", overflowWidth);
-  // Ensure there's actual overflow to animate
-  if (overflowWidth > 0) {
-    // Create or update the ScrollTrigger instance
-    ScrollTrigger.create({
-      trigger: cardsContainer,
-      start: 'top +=100',
-      end: 'bottom bottom',
-      onUpdate: (self) => {
-        const progress = self.progress; // Value from 0 to 1 based on scroll position
-        const xPosition = -progress * overflowWidth; // Calculate the x translation
-        gsap.to(cardsContainer, {x: xPosition, ease: 'none'});
-      },
-      onKill: () => gsap.set(cardsContainer, {x: 0}),
-      markers: true, // For debugging purposes, remove in production
-    });
+    // console.log("container", containerWidth);
+    // console.log("window scroll width", windowScrollWidth);
+    // console.log("overflow", overflowWidth);
+    // Ensure there's actual overflow to animate
+    
+    if (overflowWidth > 0) {
+      // Create or update the ScrollTrigger instance
+      ScrollTrigger.create({
+        trigger: cardsContainer,
+        start: 'top +=100',
+        end: 'bottom bottom',
+        onUpdate: (self) => {
+          const progress = self.progress; // Value from 0 to 1 based on scroll position
+          const xPosition = -progress * overflowWidth; // Calculate the x translation
+          gsap.to(cardsContainer, {x: xPosition, ease: 'none'});
+        },
+        onKill: () => gsap.set(cardsContainer, {x: 0}),
+        //markers: true, // For debugging purposes, remove in production
+      });
+    }
   }
 }
 
@@ -113,22 +156,22 @@ window.addEventListener('resize', () => {
   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
   setupScrollAnimation();
 });
+  const h2Element = document.querySelector('.text-separate h2');
+  let words = h2Element.textContent.split(' ');
 
-const h2Element = document.querySelector('.text-separate h2');
-let words = h2Element.textContent.split(' ');
+  if (words.length > 1) {
+    const lastTwoWords = words.slice(-2).join(' ');
+    words = [...words.slice(0, -2), lastTwoWords];
+  }
 
-if (words.length > 1) {
-  const lastTwoWords = words.slice(-2).join(' ');
-  words = [...words.slice(0, -2), lastTwoWords];
+  h2Element.textContent = '';
+
+  words.forEach(word => {
+    const span = document.createElement('span');
+    span.textContent = word;
+    h2Element.appendChild(span);
+  });
 }
-
-h2Element.textContent = '';
-
-words.forEach(word => {
-  const span = document.createElement('span');
-  span.textContent = word;
-  h2Element.appendChild(span);
-});
 
 
   // const stickyHeader = document.querySelector('.main-header--sticky');
@@ -169,41 +212,41 @@ words.forEach(word => {
   }
 
 
-  // $('a[href*="#"]')
-  // // Remove links that don't actually link to anything
-  // .not('[href="#"]')
-  // .not('[href="#0"]')
-  // .click(function (event) {
-  //   // On-page links
-  //   if (
-  //     location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-  //     &&
-  //     location.hostname == this.hostname
-  //   ) {
-  //     // Figure out element to scroll to
-  //     var target = $(this.hash);
-  //     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-  //     // Does a scroll target exist?
-  //     if (target.length) {
-  //       // Only prevent default if animation is actually gonna happen
-  //       event.preventDefault();
-  //       $('html, body').animate({
-  //         scrollTop: target.offset().top - 50
-  //       }, 1000, function () {
-  //         // Callback after animation
-  //         // Must change focus!
-  //         var $target = $(target);
-  //         $target.focus();
-  //         if ($target.is(":focus")) { // Checking if the target was focused
-  //           return false;
-  //         } else {
-  //           $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-  //           $target.focus(); // Set focus again
-  //         };
-  //       });
-  //     }
-  //   }
-  // });
+  $('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function (event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+      &&
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1500, function () {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
 
   const customLightboxHTML = 
   `<div id="glightbox-body" class="glightbox-container">
@@ -244,20 +287,25 @@ words.forEach(word => {
   let menu = new Menu();
   menu.init();
 
-  let cardsScroll = new CardsScroll();
-  cardsScroll.init();
+  
+  if (body.classList.contains('home')) {
 
-  let marqueeText = new MarqueeText();
-  marqueeText.init();
+    let cardsScroll = new CardsScroll();
+    cardsScroll.init();
 
-  let headingsScroll = new HeadingsScroll();
-  headingsScroll.init();
+    let marqueeText = new MarqueeText();
+    marqueeText.init();
 
-  let marqueeImage = new MarqueeImage();
-  marqueeImage.init();
+    let headingsScroll = new HeadingsScroll();
+    headingsScroll.init();
 
-  let carousels = new Carousels();
-  carousels.init();
+    let marqueeImage = new MarqueeImage();
+    marqueeImage.init();
+
+    let carousels = new Carousels();
+    carousels.init();
+    
+  }
 
   // application code
 };

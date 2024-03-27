@@ -1,4 +1,4 @@
-<section class="home__offer">
+<section class="home__offer" @if ($id) id="{{ $id }}" @endif>
     <div class="container">
        <div class="wrapper light">
           <div class="cards ">
@@ -18,7 +18,7 @@
                          </p>
                       </div>
                    </div>
-                   <div class="col-start-8 col-span-5">
+                   <div class="lg:col-start-8 lg:col-span-5 col-span-full">
                       <img src="{{ asset('images/socialmedia.png') }}" class="rounded-2xl" alt="">
                    </div>
                 </div>
@@ -38,7 +38,7 @@
                       </div>
                       
                    </div>
-                   <div class="col-start-8 col-span-5">
+                   <div class="lg:col-start-8 lg:col-span-5 col-span-full">
                       <img src="{{ asset('images/promocjaeventow.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
                    </div>
                 </div>
@@ -57,7 +57,7 @@
                       </div>
                       
                    </div>
-                   <div class="col-start-8 col-span-5">
+                   <div class="lg:col-start-8 lg:col-span-5 col-span-full">
                       <img src="{{ asset('images/fotografia.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
                    </div>
                 </div>
@@ -77,7 +77,7 @@
                       </div>
                       
                    </div>
-                   <div class="col-start-8 col-span-5">
+                   <div class="lg:col-start-8 lg:col-span-5 col-span-full">
                       <img src="{{ asset('images/wideo.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
                    </div>
                 </div>
@@ -108,7 +108,7 @@
                          </ul>
                       </div>
                    </div>
-                   <div class="col-start-8 col-span-5">
+                   <div class="lg:col-start-8 lg:col-span-5 col-span-full">
                       <img src="{{ asset('images/reklama.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
                    </div>
                 </div>
@@ -126,7 +126,7 @@
                          <p>Mam doświadczenie w marketingu, a dzięki moim Partnerom biznesowym, mogę pomóc Ci zrobić logo, stronę www czy materiały graficzne i drukowane.</p>
                       </div>
                    </div>
-                   <div class="col-start-8 col-span-5">
+                   <div class="lg:col-start-8 lg:col-span-5 col-span-full">
                       <img src="{{ asset('images/inne.png') }}" class="rounded-2xl aspect-[456/560] h-[560px] object-cover" alt="">
                    </div>
                 </div>

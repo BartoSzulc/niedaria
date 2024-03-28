@@ -2,7 +2,7 @@
 
     $title = $data['title'] ?? null;
     $realizations = $data['realizations'] ?? null;
-    $realizations_mobile = $data['realizations_mobile'] ?? null;
+    $realizations_mobile = $data['realizations-mobile'] ?? null;
     
 @endphp
 

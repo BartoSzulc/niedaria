@@ -5,7 +5,7 @@
         &-col {
             @apply col-span-full grid gap-6 items-center;
             label {
-                @apply pl-2 pr-4 text-B20 font-bold text-black20;
+                @apply pl-0 pr-0 lg:pl-2 lg:pr-4 text-B20 font-bold text-black20;
             }
             input, textarea {
                 @apply border rounded-lg py-2 px-4 box-border w-full;
@@ -65,7 +65,7 @@ input[type="checkbox"] {
     @apply m-0;
 }
 .wpcf7-form-control-wrap {
-    @apply flex h-auto max-lg:justify-center;
+    @apply flex h-auto max-lg:justify-end;
 }
 //checkboxes
 .wpcf7-acceptance {

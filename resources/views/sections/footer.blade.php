@@ -1,5 +1,6 @@
 @php
-
+    $data = get_field('footer', 'option');
+    $socials = $data['socials'] ?? null;
 @endphp
 @include('sections.modal')
 <footer class="pt-30 pb-10 relative max-lg:py-4">
@@ -10,22 +11,11 @@
                 <a href="{{ home_url() }}">@svg('images.logo_client', 'xl:h-[168px] h-[160px]')</a>
             </div>
         </div>
+        @if ($socials)
         <div class="col-span-full lg:col-span-3 flex items-center max-lg:justify-center">
-            <div class="social-icons flex xl:gap-6 lg:gap-4 gap-8 items-center">
-                <div class="icon">
-                    @svg('images.envelope_icon')
-                </div>
-                <div class="icon">
-                    @svg('images.envelope_icon')
-                </div>
-                <div class="icon">
-                    @svg('images.envelope_icon')
-                </div>
-                <div class="icon">
-                    @svg('images.envelope_icon')
-                </div>
-            </div>
+            @include('partials.social-icons', ['class' => ''])
         </div>
+        @endif
         <div class="col-span-full lg:col-span-7 max-lg:mt-8">
             @if (has_nav_menu('primary_navigation'))
             <nav class="nav-primary flex items-center justify-end h-full max-lg:justify-center" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
@@ -41,7 +31,7 @@
 
     </div>
     <div class="w-full flex items-center justify-end text-B20 font-light text-primary60 max-lg:mt-12 max-lg:text-center max-lg:justify-center">
-        <p>© 2024 Niedaria.pl. All rights reserved.</p>
+        <p>© {{ date('Y') }} Niedaria.pl. All rights reserved.</p>
     </div>
 </div>
     

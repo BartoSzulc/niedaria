@@ -33,8 +33,8 @@ export function initCaseSlider() {
                     });
                     gsap.fromTo(
                       el.querySelector('.swiper-slide-active .title-inside'),
-                      { opacity: 0, y: 100 },
-                      { opacity: 1, y: 0, duration: 0.7, delay: 0 } // Adjusted delay to 0.2 seconds
+                      { opacity: 0 },
+                      { opacity: 1, duration: 0.7, delay: 0 } // Adjusted delay to 0.2 seconds
                     );
                     //next
                     const icons = this.el.querySelectorAll('.swiper-slide-next .icon');
@@ -47,7 +47,7 @@ export function initCaseSlider() {
                     });
                     gsap.set(
                       el.querySelector('.swiper-slide-next .title-inside'),
-                      { opacity: 0, y: 100 } // Set initial opacity to 0 and y position to -100
+                      { opacity: 0 } // Set initial opacity to 0 and y position to -100
                     );
 
                 },
@@ -70,8 +70,8 @@ export function initCaseSlider() {
 
                     gsap.fromTo(
                       this.slides[this.previousIndex].querySelector('.title-inside'),
-                      { opacity: 1, y: 0 },
-                      { opacity: 0, y: 100, duration: 0.7 } // Adjusted duration to 0.5 seconds
+                      { opacity: 1 },
+                      { opacity: 0 , duration: 0.7 } // Adjusted duration to 0.5 seconds
                     );
                 },
                 slideChange: function () {
@@ -94,8 +94,8 @@ export function initCaseSlider() {
                     });
                     gsap.fromTo(
                       this.slides[this.activeIndex].querySelector('.title-inside'),
-                      { opacity: 0, y: 100 },
-                      { opacity: 1, y: 0, duration: 0.7, delay: 1 } // Adjusted duration to 0.5 seconds
+                      { opacity: 0 },
+                      { opacity: 1, duration: 0.7, delay: 1 } // Adjusted duration to 0.5 seconds
                     );
                 }
               }

@@ -88,7 +88,7 @@
 
 //
 .layout_heading-list {
-   height: 86px;
+   
    overflow: hidden
 }
 
@@ -109,7 +109,8 @@
 }
 
 .layout_heading {
-   white-space: nowrap;
+   @apply sm:whitespace-nowrap;
+   @apply max-sm:flex max-sm:items-center max-sm:justify-center text-center;
 }
 //
 .work_grid {
@@ -133,7 +134,7 @@
       .cards {
       @apply mx-auto;
       .card {
-         @apply items-center justify-center flex-col flex min-h-screen;
+         @apply items-center justify-center flex-col flex lg:min-h-screen;
          
          &.work_card {
             .grid {

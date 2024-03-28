@@ -1,22 +1,14 @@
+@php
+  $text = $data['text'] ?? null;
+@endphp
+
 <section class="marquee" @if ($id) id="{{ $id }}" @endif>
     <div class="marquee__inner" aria-hidden="true" ref="inner">
+      @for ($i = 0; $i < 8; $i++)
       <div class="marquee__part">
-       <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
+       <span>{!! $text !!}</span>
       </div>
-      <div class="marquee__part">
-       <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
-      </div>
-      <div class="marquee__part">
-       <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
-      </div>
-      <div class="marquee__part">
-       <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
-      </div>
-      <div class="marquee__part">
-       <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
-      </div>
-      <div class="marquee__part">
-       <span>Kto pyta, nie…płaci! Nie wahaj się skorzystać z darmowej konsultacji</span>
+      @endfor
       </div>
     </div>
- </section>
+</section>

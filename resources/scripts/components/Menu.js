@@ -4,59 +4,53 @@ export default class Menu extends Component {
 
     constructor() {
         super();
-      
-      }
+    }
     
-      init() {
+    init() {
         const isMobile = window.innerWidth < 1024;
-      
-       
-      
         let isOpen = false; // Track if the menu is open
-      
-        document.querySelectorAll('.js-button').forEach(button => {
-          button.addEventListener('click', () => {
-            isOpen = !isOpen; // Toggle the state
-      
-            // Apply or remove classes based on whether the menu is open
+
+        // Function to toggle the menu open/close
+        const toggleMenu = (shouldOpen) => {
+            isOpen = shouldOpen !== undefined ? shouldOpen : !isOpen; // Toggle or set the state based on argument
+
+            // Toggle classes for the menu lines
             document.querySelectorAll('.js-button .menu-line:first-child').forEach(firstLine => {
-              if (isOpen) {
-                firstLine.classList.add('rotate-45');
-                firstLine.classList.remove('-translate-y-1.5');
-              } else {
-                firstLine.classList.remove('rotate-45');
-                firstLine.classList.add('-translate-y-1.5');
-              }
+                firstLine.classList.toggle('rotate-45', isOpen);
+                firstLine.classList.toggle('-translate-y-1.5', !isOpen);
             });
-      
+
             document.querySelectorAll('.js-button .menu-line:nth-child(2)').forEach(middleLine => {
-              if (isOpen) {
-                middleLine.classList.add('opacity-0');
-              } else {
-                middleLine.classList.remove('opacity-0');
-              }
+                middleLine.classList.toggle('opacity-0', isOpen);
             });
-      
+
             document.querySelectorAll('.js-button .menu-line:last-child').forEach(lastLine => {
-              if (isOpen) {
-                lastLine.classList.add('-rotate-45');
-                lastLine.classList.remove('translate-y-1.5');
-              } else {
-                lastLine.classList.remove('-rotate-45');
-                lastLine.classList.add('translate-y-1.5');
-              }
+                lastLine.classList.toggle('-rotate-45', isOpen);
+                lastLine.classList.toggle('translate-y-1.5', !isOpen);
             });
-      
-            // Toggle the mobile menu and prevent body scrolling when open
+
+            // Toggle the mobile menu
             const menus = document.querySelectorAll('.mobile-menu');
             menus.forEach(menu => {
-              menu.classList.toggle('active');
-              
+                menu.classList.toggle('active', isOpen);
             });
-            
-          });
+        };
+
+        // Function to close the menu explicitly
+        const closeMenu = () => {
+            if (isOpen) toggleMenu(false);
+        };
+
+        // Event listener for .js-button clicks
+        document.querySelectorAll('.js-button').forEach(button => {
+            button.addEventListener('click', () => {
+                toggleMenu(); // Toggle menu without argument will just invert its current state
+            });
         });
-      }
-      
-    
+
+        // Event listener for menu item clicks
+        document.querySelectorAll(".menu-item a[href]:not([href*='/oferta/']), .menu-item a[href^='/oferta/#']").forEach((menuItem) => {
+            menuItem.addEventListener("click", closeMenu);
+        });
+    }
 }

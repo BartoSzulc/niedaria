@@ -5,7 +5,7 @@
 <section class="home__realizacje py-[140px] lg:py-[74px]" @if ($id) id="{{ $id }}" @endif>
     <div class="container">
       @if ($title)
-       <div class="text-h3 lg:text-h2 font-secondary text-primary100 mb-6 lg:mb-9">
+       <div class="text-h3 lg:text-h2 font-secondary text-primary100 mb-6 lg:mb-9 text-center">
           <h2>{!! $title !!}</h2>
        </div>
       @endif

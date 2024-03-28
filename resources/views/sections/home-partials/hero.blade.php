@@ -40,7 +40,7 @@
                 @if ($realizations_mobile)
                     @foreach ($realizations_mobile as $realization_mobile)
                     @php($image = $realization_mobile['image'] ?? null)
-                    <div class="header_image-wrapper">
+                    <div class="header_image-wrapper hide-desktop-landscape">
                         {!! wp_get_attachment_image($image, 'full', false, array('class' => 'header_image', 'loading' => 'lazy')); !!}
                     </div>
                     @endforeach

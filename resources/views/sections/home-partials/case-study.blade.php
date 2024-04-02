@@ -6,7 +6,7 @@
 <section class="home__case-study pb-11 lg:pb-[70px]" @if ($id) id="{{ $id }}" @endif>
     <div class="container">
       @if ($title)
-       <div class="text-h3 lg:text-h2 font-secondary text-primary100 lg:mb-[70px] mb-6 text-center">
+       <div class="text-h3 lg:text-h2 font-secondary text-primary100 lg:mb-[70px] mb-6">
           <h2>Case Study</h2>
        </div>
       @endif

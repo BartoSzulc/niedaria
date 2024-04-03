@@ -2,7 +2,7 @@
 
     $title = $data['title'] ?? null;
     $realizations = $data['realizations'] ?? null;
-    $realizations_mobile = $data['realizations_mobile'] ?? null;
+    $realizations_mobile = $data['realizations-mobile'] ?? null;
     
 @endphp
 
@@ -37,16 +37,16 @@
                     {!! wp_get_attachment_image($image, 'full', false, array('class' => 'header_image', 'loading' => 'lazy')); !!}
                 </div>
                 @endforeach
+                @if ($realizations_mobile)
+                    @foreach ($realizations_mobile as $realization_mobile)
+                    @php($image = $realization_mobile['image'] ?? null)
+                    <div class="header_image-wrapper hide-desktop-landscape">
+                        {!! wp_get_attachment_image($image, 'full', false, array('class' => 'header_image', 'loading' => 'lazy')); !!}
+                    </div>
+                    @endforeach
+                @endif
              </div>
           </div>
-        @endif
-        @if ($realizations_mobile)
-            @foreach ($realizations_mobile as $realization_mobile)
-            @php($image = $realization_mobile['image'] ?? null)
-            <div class="header_image-wrapper">
-                {!! wp_get_attachment_image($image, 'full', false, array('class' => 'header_image', 'loading' => 'lazy')); !!}
-            </div>
-            @endforeach
         @endif
        </div>
        <div data-w-id="a8b857c8-a52b-4a0c-6977-5aa98b87c627" class="header_ix-trigger"></div>

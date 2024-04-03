@@ -40,7 +40,7 @@ body {
         @apply flex items-center;
         &:before {
             content:"";
-            @apply w-4 h-4 bg-primary100 rounded-full mr-2;
+            @apply w-2 h-2 lg:w-4 lg:h-4 bg-primary100 rounded-full mr-2 shrink-0;
         }
     }
     &--center {

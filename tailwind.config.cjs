@@ -21,7 +21,6 @@ module.exports = {
       '3xl': '1440px',
       '4xl': '1600px',
       '5xl': '1920px',
-      'logo': '1744px',
       
     },
     fontFamily: {
@@ -36,7 +35,7 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         // Simple 16 column grid
-        'logo': 'repeat(6, minmax(264px, 264px));',
+        'logo': 'repeat(6, minmax(200px, 200px));',
 
       
       },

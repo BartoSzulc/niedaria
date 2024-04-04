@@ -54,7 +54,6 @@ class Home extends Field
         ->addTab('contact', ['label' => 'Kontakt', 'placement' => 'left'])
             ->addFields($this->get(Contact::class))
         ;
-
         return $home->build();
     }
 }

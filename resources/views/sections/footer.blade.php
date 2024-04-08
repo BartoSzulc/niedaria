@@ -21,7 +21,7 @@
             <nav class="nav-primary flex items-center justify-end h-full max-lg:justify-center" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
               {!! wp_nav_menu([
                 'theme_location' => 'primary_navigation', 
-                'menu_class' => 'nav font-light xl:text-B20 lg:text-desc text-B20 flex items-center xl:gap-5 lg:gap-4 gap-8 max-lg:flex-wrap max-lg:justify-center', 
+                'menu_class' => 'nav font-light lg:text-desc text-B20  flex items-center xl:gap-5 lg:gap-4 gap-8 max-lg:flex-wrap max-lg:justify-center', 
                 'add_li_class' => 'text-black10 transition-all duration-500 ease-in-out hover:text-primary60',
                 'echo' => false
                 ])!!}

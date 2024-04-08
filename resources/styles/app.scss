@@ -57,3 +57,19 @@ body {
 .banner {
     background: linear-gradient(0deg, rgba(34, 34, 34, 0) 0%, #000000 100%);
 }
+
+.wysiwyg {
+    @apply text-white;
+    > * + * {
+        @apply mt-5;
+    }
+    h1 {
+        @apply text-h3 lg:text-h2 font-secondary text-primary100;
+    }
+    h2 {
+        @apply text-h4 lg:text-h3 font-secondary text-primary100;
+    }
+    h3 { 
+        @apply text-h5 lg:text-h4 font-secondary text-primary100;
+    }
+}

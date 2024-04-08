@@ -60,6 +60,9 @@ body {
 
 .wysiwyg {
     @apply text-white;
+    ul {
+        @apply list-disc list-inside;
+    }
     > * + * {
         @apply mt-5;
     }

@@ -30,8 +30,12 @@
         </div>
 
     </div>
-    <div class="w-full flex items-center justify-end text-B20 font-light text-primary60 max-lg:mt-12 max-lg:text-center max-lg:justify-center">
-        <p>© {{ date('Y') }} Niedaria.pl. All rights reserved.</p>
+    <div class="w-full gap-6 flex flex-wrap items-center justify-end lg:text-desc text-B20 font-light text-primary60 max-lg:mt-12 max-lg:text-center max-lg:justify-center">
+    @php($privacy_policy = get_privacy_policy_details())
+    @if ( !empty($privacy_policy['title']) && !empty($privacy_policy['url']) ) 
+        {!! '<a href="' . esc_url( $privacy_policy['url'] ) . '">' . esc_html( $privacy_policy['title'] ) . '</a>' !!}
+    @endif
+    <p>© {{ date('Y') }} Niedaria.pl. All rights reserved.</p>
     </div>
 </div>
     

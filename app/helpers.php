@@ -66,4 +66,25 @@ function cc_mime_types($mimes) {
 }   
 add_filter('upload_mimes', 'cc_mime_types');
 
+function get_privacy_policy_details() {
+    $details = array(
+        'title' => '',
+        'url'   => '',
+    );
+
+    $policy_page_id = (int) get_option( 'wp_page_for_privacy_policy' );
+
+    if ( $policy_page_id && get_post_status( $policy_page_id ) === 'publish' ) {
+        $details['title'] = get_the_title( $policy_page_id );
+        $details['url']   = get_permalink( $policy_page_id );
+    }
+
+    return $details;
+}
+
+// $privacy_policy = get_privacy_policy_details();
+
+// if ( !empty($privacy_policy['title']) && !empty($privacy_policy['url']) ) {
+//     echo 'Privacy Policy: <a href="' . esc_url( $privacy_policy['url'] ) . '">' . esc_html( $privacy_policy['title'] ) . '</a>';
+// }
 

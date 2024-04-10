@@ -30,12 +30,17 @@
         </div>
 
     </div>
-    <div class="w-full gap-6 flex flex-wrap items-center justify-end lg:text-desc text-B20 font-light text-primary60 max-lg:mt-12 max-lg:text-center max-lg:justify-center">
-    @php($privacy_policy = get_privacy_policy_details())
-    @if ( !empty($privacy_policy['title']) && !empty($privacy_policy['url']) ) 
-        {!! '<a href="' . esc_url( $privacy_policy['url'] ) . '">' . esc_html( $privacy_policy['title'] ) . '</a>' !!}
-    @endif
-    <p>© {{ date('Y') }} Niedaria.pl. All rights reserved.</p>
+    <div class="w-full gap-6 flex flex-wrap items-center lg:justify-between lg:text-desc text-B20 font-light text-primary60 max-lg:mt-12 max-lg:text-center max-lg:justify-center">
+    <div class="left ">
+        @php($privacy_policy = get_privacy_policy_details())
+        @if ( !empty($privacy_policy['title']) && !empty($privacy_policy['url']) ) 
+            {!! '<a class="transition-all hover:opacity-50" href="' . esc_url( $privacy_policy['url'] ) . '">' . esc_html( $privacy_policy['title'] ) . '</a>' !!}
+        @endif
+        <p>© {{ date('Y') }} Niedaria.pl. All rights reserved.</p>
+    </div>
+    <div class="right">
+        <a class="flex items-center gap-4 transition-all hover:opacity-50" href="https://gregormedia.com.pl/" target="_blank" rel="noopener">Realizacja @svg('images.logo_gregor')</a>
+    </div>
     </div>
 </div>
     

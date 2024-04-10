@@ -8,7 +8,7 @@
     @endphp
     
     <div class="icon">
-        <a href="{!! $text !!}" class="transition-all duration-500 ease-in-out hover:scale-110">
+        <a href="{!! $text !!}" class="transition-all duration-500 ease-in-out hover:scale-110" target="_blank" rel="noopener">
             {!! wp_get_attachment_image($icon, 'full', false, ['class' => 'transition-all duration-500 ease-in-out hover:scale-110']) !!}
         </a>
     </div>

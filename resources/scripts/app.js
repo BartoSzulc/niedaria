@@ -19,7 +19,7 @@ import { initModalSuccess } from './components/partials/modalSuccess';
 gsap.registerPlugin(ScrollTrigger);
 const main = async (err) => {
   
-
+ScrollTrigger.normalizeScroll(true)
 
 if (window.matchMedia("(min-width: 1024px)").matches) {
   const lenis = new Lenis()

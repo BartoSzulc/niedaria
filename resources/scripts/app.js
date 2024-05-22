@@ -20,6 +20,8 @@ gsap.registerPlugin(ScrollTrigger);
 const main = async (err) => {
   
 
+
+if (window.matchMedia("(min-width: 1024px)").matches) {
   const lenis = new Lenis()
 
   lenis.on('scroll', (e) => {
@@ -33,6 +35,7 @@ const main = async (err) => {
   })
   
   gsap.ticker.lagSmoothing(0)
+}
 
 
 
